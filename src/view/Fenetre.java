@@ -15,7 +15,7 @@ public class Fenetre extends JFrame {
 	private static final int size_sos = 60;
 	private static final int h_sos = 0;
 	private static final int l_sos = 240;
-	private static final String path ="./IHM/src/img/";
+	private static final String path ="./src/img/";
 	private JButton btnSos;
 	public ImagePanel contentPane; //essayer de le mettre en private ??
 

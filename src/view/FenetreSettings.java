@@ -38,7 +38,7 @@ public class FenetreSettings extends FenetreSecondaire {
 	private static final int size_ok = 60;
 	private static final int l_ok = 110;
 	private static final int h_ok = 400;
-	private static final String path = "./IHM/src/img/";
+	private static final String path = "./src/img/";
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

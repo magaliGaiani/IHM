@@ -17,6 +17,7 @@ public class FenetreTaux extends FenetreSecondaire {
 	private JLabel labGlycemie;
 	private JLabel labInjection;
 	private JLabel lblSeringue;
+	private static final String path = "./src/img/";
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -36,14 +37,14 @@ public class FenetreTaux extends FenetreSecondaire {
 		setContentPane(contentPane);
 		
 		btnEat = new JButton();
-		btnEat.setIcon(new ImageIcon("./IHM/src/img/plate.png"));
+		btnEat.setIcon(new ImageIcon(path+"plate.png"));
 		btnEat.setBounds(45, 200, getSize_button(), getSize_button());
 		btnEat.setBorder(null);
 		btnEat.setBackground(null);
 		contentPane.add(btnEat);
 		
 		btnSport = new JButton();
-		btnSport.setIcon(new ImageIcon("./IHM/src/img/sport.png"));
+		btnSport.setIcon(new ImageIcon(path+"sport.png"));
 		btnSport.setBounds(175, 200, getSize_button(), getSize_button());
 		btnSport.setBorder(null);
 		btnSport.setBackground(null);
@@ -51,7 +52,7 @@ public class FenetreTaux extends FenetreSecondaire {
 		
 		//a mettre visible que si glycémie trop haute ou basse
 		lblSeringue = new JLabel();
-		lblSeringue.setIcon(new ImageIcon("./IHM/src/img/seringue.png"));
+		lblSeringue.setIcon(new ImageIcon(path+"seringue.png"));
 		lblSeringue.setBounds(70, 315, getSize_button(), getSize_button());
 		btnSport.setBorder(null);
 		btnSport.setBackground(null);

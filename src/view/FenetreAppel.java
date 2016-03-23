@@ -15,7 +15,7 @@ public class FenetreAppel extends Fenetre {
 	private static final int size_phone = 70;
 	private static final int h_phone = 150;
 	private static final int l_phone = 370;
-	private static final String path = "./IHM/src/img/phone/";
+	private static final String path = "./src/img/phone/";
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

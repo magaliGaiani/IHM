@@ -15,7 +15,7 @@ public class FenetreHumeur extends FenetreSecondaire {
 	private static final int size_button = 50;
 	private static final int borderv = 20;
 	private static final int borderh = 50;
-	private static final String path = "./IHM/src/img/humeur/";
+	private static final String path = "./src/img/humeur/";
 	private JButton btnMal1;
 	private JButton btnMal2;
 	private JButton btnMal3;
@@ -28,6 +28,10 @@ public class FenetreHumeur extends FenetreSecondaire {
 	private JButton btnMal10;
 	private JButton btnMal11;
 	private JButton btnMal12;
+	private JButton btnOk;
+	private static final int size_ok = 60;
+	private static final int l_ok = 110;
+	private static final int h_ok = 400;
 	
 	private JScrollPane scroll;
 	private JPanel pBtn;
@@ -53,7 +57,7 @@ public class FenetreHumeur extends FenetreSecondaire {
 		//scroll.setViewportBorder(null);
 		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scroll.setSize(300, 320);
+		scroll.setSize(300, 310);
 		scroll.setLocation(0, 80);
 		getContentPane().add(scroll);
 		scroll.setBackground(null);
@@ -147,5 +151,11 @@ public class FenetreHumeur extends FenetreSecondaire {
 		pBtn.add(btnMal11);
 		pBtn.add(btnMal12);
 		
+		btnOk = new JButton();
+		btnOk.setIcon(new ImageIcon("./src/img/ok.png"));
+		btnOk.setBounds(l_ok, h_ok, size_ok, size_ok);
+		btnOk.setBackground(null);
+		btnOk.setBorder(null);
+		getContentPane().add(btnOk);
 	}
 }

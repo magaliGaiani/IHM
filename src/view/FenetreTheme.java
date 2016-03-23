@@ -17,7 +17,7 @@ public class FenetreTheme extends FenetreSecondaire {
 	private static final int h2 = 250;
 	private static final int l1 = 40;
 	private static final int l2 = 170;
-	private String path = "./IHM/src/img/theme/";
+	private String path = "./src/img/theme/";
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

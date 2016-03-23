@@ -12,7 +12,7 @@ public class FenetrePhone extends FenetreSecondaire {
 	private JButton btnMom;
 	private JButton btnDad;
 	private JButton btnDoctor;
-	private String path = "./IHM/src/img/phone/";
+	private String path = "./src/img/phone/";
 	private static final int h1=120;
 	private static final int h2=280;
 	private static final int l1=40;

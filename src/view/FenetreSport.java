@@ -15,7 +15,7 @@ public class FenetreSport extends FenetreSecondaire {
 	private JLabel labTimeBike;
 	private JLabel labTimeDance;
 	private JLabel labTimeSwim;
-	private String path = "./IHM/src/img/sport/";
+	private String path = "./src/img/sport/";
 	private int size_temps = 60;
 	private static final int l_sport = 50;
 	private static final int l_time = 160;

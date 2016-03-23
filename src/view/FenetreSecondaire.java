@@ -7,7 +7,7 @@ import javax.swing.JButton;
 
 public class FenetreSecondaire extends Fenetre {
 	
-	private static final String path = "./IHM/src/img/";
+	private static final String path = "./src/img/";
 	private static final int s_door = 60;
 	private static final int h_door = 418;
 	private static final int l_door = 240;

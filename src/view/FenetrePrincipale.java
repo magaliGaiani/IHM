@@ -1,8 +1,6 @@
 package view;
 
 import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -25,6 +23,7 @@ public class FenetrePrincipale extends Fenetre {
 	private static final int l1 = 45;
 	private static final int l2 = 110;
 	private static final int l3 = 175;
+	private static final String path="./src/img/";
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -44,48 +43,46 @@ public class FenetrePrincipale extends Fenetre {
 		setContentPane(contentPane);
 		
 		btnBlood = new JButton();
-		btnBlood.setIcon(new ImageIcon("./IHM/src/img/sang.png"));
+		btnBlood.setIcon(new ImageIcon(path+"sang.png"));
 		btnBlood.setBounds(l_blood, h_blood, s1_blood, s2_blood);
 		btnBlood.setBorder(null);
 		btnBlood.setBackground(null);
 		contentPane.add(btnBlood);
 		
 		btnPhone = new JButton();
-		btnPhone.setIcon(new ImageIcon("./IHM/src/img/phone.png"));
+		btnPhone.setIcon(new ImageIcon(path+"phone.png"));
 		btnPhone.setBounds(l1, h1, getSize_button(), getSize_button());
 		btnPhone.setBorder(null);
 		btnPhone.setBackground(null);
 		contentPane.add(btnPhone);
 		
 		btnBook = new JButton();
-		btnBook.setIcon(new ImageIcon("./IHM/src/img/book.png"));
+		btnBook.setIcon(new ImageIcon(path+"book.png"));
 		btnBook.setBounds(l3, h1, getSize_button(), getSize_button());
 		btnBook.setBorder(null);
 		btnBook.setBackground(null);
 		contentPane.add(btnBook);
 		
 		btnSick = new JButton();
-		btnSick.setIcon(new ImageIcon("./IHM/src/img/bandage.png"));
+		btnSick.setIcon(new ImageIcon(path+"bandage.png"));
 		btnSick.setBounds(l2, h2, getSize_button(), getSize_button());
 		btnSick.setBorder(null);
 		btnSick.setBackground(null);
 		contentPane.add(btnSick);
 		
 		btnTheme = new JButton();
-		btnTheme.setIcon(new ImageIcon("./IHM/src/img/theme.png"));
+		btnTheme.setIcon(new ImageIcon(path+"theme.png"));
 		btnTheme.setBounds(l1, h3, getSize_button(), getSize_button());
 		btnTheme.setBorder(null);
 		btnTheme.setBackground(null);
 		contentPane.add(btnTheme);
 		
 		btnSettings = new JButton();
-		btnSettings.setIcon(new ImageIcon("./IHM/src/img/settings.png"));
+		btnSettings.setIcon(new ImageIcon(path+"settings.png"));
 		btnSettings.setBounds(l3, h3, getSize_button(), getSize_button());
 		btnSettings.setBorder(null);
 		btnSettings.setBackground(null);
 		contentPane.add(btnSettings);
-		
-
 	}
 	
 

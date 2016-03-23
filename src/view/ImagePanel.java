@@ -10,7 +10,7 @@ public class ImagePanel extends JPanel {
 	//ImagePanel crée un JPanel avec une image de fond passée en argument
 	
 	private Image img = null;
-	private String path = "./IHM/src/img/theme/";
+	private String path = "./src/img/theme/";
 	
 	public ImagePanel(String img) {
 		this.img = new ImageIcon(path+img).getImage();

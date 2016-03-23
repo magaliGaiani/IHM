@@ -13,7 +13,7 @@ public class FenetreFood extends FenetreSecondaire {
 	private JLabel labFish;
 	private JLabel labLegumes;
 	private JLabel labFruits;
-	private static final String path = "./IHM/src/img/food/";
+	private static final String path = "./src/img/food/";
 	private static final int h1=80;;
 	private static final int h2=200;
 	private static final int h3=320;
