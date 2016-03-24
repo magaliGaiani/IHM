@@ -4,15 +4,15 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
-import view.FenetrePrincipale;
-import view.FenetreSecondaire;
+import view.HomePanel;
+import view.SecondPanel;
 
 public class DoorAction extends AbstractAction {
 
-	public FenetreSecondaire Fs;
-	public FenetrePrincipale Fp;
+	public SecondPanel Fs;
+	public HomePanel Fp;
 	
-	public DoorAction (FenetreSecondaire fenetre){
+	public DoorAction (SecondPanel fenetre){
 		Fs=fenetre;
 	}
 	
