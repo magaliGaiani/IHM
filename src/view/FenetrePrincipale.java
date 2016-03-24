@@ -16,7 +16,7 @@ public class FenetrePrincipale extends Fenetre {
 	private static final int s1_blood = 70;
 	private static final int s2_blood = 60;
 	private static final int h_blood = 418;
-	private static final int l_blood = 242;
+	private static final int l_blood = 235;
 	private static final int h1 = 90;
 	private static final int h2 = 200;
 	private static final int h3 = 310;
