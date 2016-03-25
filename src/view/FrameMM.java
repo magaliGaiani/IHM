@@ -19,16 +19,16 @@ public class FrameMM extends JFrame {
 	private JLabel back;
 	private static final String paththeme ="./src/img/theme/";
 	
-	HomePanel home = new HomePanel(size_button);
-	BloodPanel blood = new BloodPanel(size_button);
-	CallPanel call = new CallPanel();
-	FoodPanel food = new FoodPanel(size_button);
-	HistoryPanel history = new HistoryPanel();
-	PhonePanel phone = new PhonePanel();
-	SettingsPanel settings = new SettingsPanel();
-	SickPanel sick = new SickPanel();
-	SportPanel sport = new SportPanel(size_button);
-	ThemePanel theme = new ThemePanel();
+	private HomePanel home;
+	private BloodPanel blood;
+	private CallPanel call;
+	private FoodPanel food;
+	private HistoryPanel history;
+	private PhonePanel phone;
+	private SettingsPanel settings;
+	private SickPanel sick;
+	private SportPanel sport;
+	private ThemePanel theme;
 	
 	public FrameMM() {
 		setSize(F_width,F_height);
@@ -37,6 +37,39 @@ public class FrameMM extends JFrame {
 		setBounds(100, 100, F_width, F_height);
 		getContentPane().setLayout(null);
 		getContentPane().setLayout(null);
+		
+		home = new HomePanel(size_button);
+		blood = new BloodPanel(size_button);
+		call = new CallPanel();
+		food = new FoodPanel(size_button);
+		history = new HistoryPanel();
+		phone = new PhonePanel();
+		settings = new SettingsPanel();
+		sick = new SickPanel();
+		sport = new SportPanel(size_button);
+		theme = new ThemePanel();
+		
+		home.setOpaque(false);
+		blood.setOpaque(false);
+		call.setOpaque(false);
+		food.setOpaque(false);
+		history.setOpaque(false);
+		phone.setOpaque(false);
+		settings.setOpaque(false);
+		sick.setOpaque(false);
+		sport.setOpaque(false);
+		theme.setOpaque(false);
+		
+		this.add(home);
+		this.add(blood);
+		this.add(call);
+		this.add(food);
+		this.add(history);
+		this.add(phone);
+		this.add(settings);
+		this.add(sick);
+		this.add(sport);
+		this.add(theme);
 		
 		btnSos = new JButton();
 		btnSos.setIcon(new ImageIcon(path+"ambulance.png"));
@@ -49,28 +82,18 @@ public class FrameMM extends JFrame {
 		back.setIcon(new ImageIcon(paththeme+"minion.png"));
 		back.setBounds(0,0,F_width,F_height-22);
 		getContentPane().add(back);
+	
+		home.setVisible(false);
+		blood.setVisible(false);
+		call.setVisible(false);
+		food.setVisible(false);
+		history.setVisible(false);
+		phone.setVisible(false);
+		settings.setVisible(false);
+		sick.setVisible(false);
+		sport.setVisible(true);
+		theme.setVisible(false);
 		
-		this.add(home);
-		//this.add(blood);
-		//this.add(call);
-		//this.add(food);
-		//this.add(history);
-		//this.add(phone);
-		//this.add(settings);
-		//this.add(sick);
-		//this.add(sport);
-		//this.add(theme);
-		
-		home.setVisible(true);
-		//blood.setVisible(false);
-		//call.setVisible(false);
-		//food.setVisible(false);
-		//history.setVisible(false);
-		//phone.setVisible(false);
-		//settings.setVisible(false);
-		//sick.setVisible(false);
-		//sport.setVisible(false);
-		//theme.setVisible(false);
 	} 
 
 }

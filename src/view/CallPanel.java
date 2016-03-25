@@ -16,9 +16,14 @@ public class CallPanel extends JPanel {
 	private static final int h_phone = 150;
 	private static final int l_phone = 370;
 	private static final String path = "./src/img/phone/";
+	private static final int F_width = 300;
+	private static final int F_height = 500;
 	
 	public CallPanel (){
 		super();
+		setSize(F_width,F_height);
+		setBounds(0,0,F_width,F_height-22);
+		setLayout(null);
 		//getContentPane().setImage(path,"mom2.jpg");
 		//mettre les photos de nous à la place, suivant qui est appelé dans FenetrePhone ou image de ambulance
 		
