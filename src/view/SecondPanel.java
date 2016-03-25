@@ -12,27 +12,16 @@ public class SecondPanel extends JPanel {
 	private static final int l_door = 240;
 	private JButton btnDoor;
 
-
-<<<<<<< HEAD
 	public SecondPanel (){
 		super();
 
-=======
-	public SecondPanel() {
-		super();
-
-		
->>>>>>> origin/master
 		btnDoor = new JButton();
 		btnDoor.setIcon(new ImageIcon(path+"door.png"));
 		btnDoor.setBounds(l_door, h_door, s_door, s_door);
 		btnDoor.setBorder(null);
 		btnDoor.setBackground(null);
 		this.add(btnDoor);
-<<<<<<< HEAD
-		
-=======
->>>>>>> origin/master
+
 	}
 
 }

@@ -22,11 +22,7 @@ public class SportPanel extends SecondPanel {
 	private static final int h3=240;
 	private static final int h4=330;
 	
-<<<<<<< HEAD
 	public SportPanel (int size){
-=======
-	public SportPanel(int size) {
->>>>>>> origin/master
 		super();
 		
 		labRun = new JLabel();
@@ -68,10 +64,7 @@ public class SportPanel extends SecondPanel {
 		labTimeSwim.setBounds(l_time, h4+10, size_temps, size_temps);
 		labTimeSwim.setIcon(new ImageIcon(path+"no.png"));
 		this.add(labTimeSwim);
-<<<<<<< HEAD
-		
-=======
->>>>>>> origin/master
+
 	}
 
 }

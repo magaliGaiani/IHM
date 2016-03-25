@@ -12,25 +12,13 @@ public class FoodPanel extends SecondPanel {
 	private JLabel labLegumes;
 	private JLabel labFruits;
 	private static final String path = "./src/img/food/";
-<<<<<<< HEAD
 	private static final int h1 = 80;;
 	private static final int h2 = 200;
 	private static final int h3 = 320;
 	private static final int l1 = 50;
 	private static final int l2 = 170;
 
-
-	public FoodPanel (int size){
-=======
-	private static final int h1=80;;
-	private static final int h2=200;
-	private static final int h3=320;
-	private static final int l1=50;
-	private static final int l2=170;
-
-
 	public FoodPanel(int size) {
->>>>>>> origin/master
 		super();
 		
 		//mettre des images barrées et gris si glycémie trop haute : no_pasta

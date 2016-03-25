@@ -1,27 +1,15 @@
 package view;
 
-<<<<<<< HEAD
 import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.JLabel;
-=======
-import java.awt.EventQueue;
-import javax.swing.JLabel;
-import java.awt.Font;
-import java.awt.Color;
->>>>>>> origin/master
 import javax.swing.SwingConstants;
 
 public class HistoryPanel extends SecondPanel {
 
-
-<<<<<<< HEAD
 	public HistoryPanel (){
-=======
-	public HistoryPanel() {
->>>>>>> origin/master
-	super();
+		super();
 		
 		JLabel label = new JLabel("15 - 02 - 2016");
 		label.setForeground(Color.BLACK);
@@ -80,13 +68,7 @@ public class HistoryPanel extends SecondPanel {
 		this.add(label_4);
 		label_4.setBackground(Color.white);
 		label_4.setOpaque(true);
-<<<<<<< HEAD
 
-=======
-		
-		
-		
->>>>>>> origin/master
 	}
 
 }

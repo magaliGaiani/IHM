@@ -39,11 +39,7 @@ public class SettingsPanel extends SecondPanel {
 	private static final int h_ok = 400;
 	private static final String path = "./src/img/";
 
-<<<<<<< HEAD
 	public SettingsPanel (){
-=======
-	public SettingsPanel() {
->>>>>>> origin/master
 		super();
 		
 		lblNom = new JLabel("Nom");

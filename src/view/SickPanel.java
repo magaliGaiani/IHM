@@ -29,15 +29,10 @@ public class SickPanel extends SecondPanel {
 	private static final int size_ok = 60;
 	private static final int l_ok = 110;
 	private static final int h_ok = 400;
-	
 	private JScrollPane scroll;
 	private JPanel pBtn;
 
-<<<<<<< HEAD
 	public SickPanel (){
-=======
-	public SickPanel() {
->>>>>>> origin/master
 		super();
 		
 		pBtn = new JPanel();
@@ -145,9 +140,6 @@ public class SickPanel extends SecondPanel {
 		btnOk.setBackground(null);
 		btnOk.setBorder(null);
 		this.add(btnOk);
-<<<<<<< HEAD
-		
-=======
->>>>>>> origin/master
+
 	}
 }
