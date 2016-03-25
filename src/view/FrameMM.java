@@ -1,7 +1,5 @@
 package view;
 
-import java.awt.EventQueue;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -21,7 +19,7 @@ public class FrameMM extends JFrame {
 	private JLabel back;
 	private static final String paththeme ="./src/img/theme/";
 	
-	HomePanel home = new HomePanel(size_button); 
+	HomePanel home = new HomePanel(size_button);
 	BloodPanel blood = new BloodPanel(size_button);
 	CallPanel call = new CallPanel();
 	FoodPanel food = new FoodPanel(size_button);
@@ -32,14 +30,13 @@ public class FrameMM extends JFrame {
 	SportPanel sport = new SportPanel(size_button);
 	ThemePanel theme = new ThemePanel();
 	
-
 	public FrameMM() {
 		setSize(F_width,F_height);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, F_width, F_height);
 		getContentPane().setLayout(null);
-		setLayout(null);
+		getContentPane().setLayout(null);
 		
 		btnSos = new JButton();
 		btnSos.setIcon(new ImageIcon(path+"ambulance.png"));
@@ -50,7 +47,7 @@ public class FrameMM extends JFrame {
 		
 		back = new JLabel();
 		back.setIcon(new ImageIcon(paththeme+"minion.png"));
-		back.setBounds(0,0,300,478);
+		back.setBounds(0,0,F_width,F_height-22);
 		getContentPane().add(back);
 		
 		this.add(home);

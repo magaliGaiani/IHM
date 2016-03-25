@@ -9,8 +9,8 @@ public class MainControler {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FrameMM frame = new FrameMM();
-					frame.setVisible(true);
+					FrameMM myframe = new FrameMM();
+					myframe.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

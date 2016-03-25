@@ -23,9 +23,14 @@ public class HomePanel extends JPanel {
 	private static final int l2 = 110;
 	private static final int l3 = 175;
 	private static final String path="./src/img/";
+	private static final int F_width = 300;
+	private static final int F_height = 500;
 
 	public HomePanel (int size) {
 		super();
+		setSize(F_width,F_height);
+		setBounds(0,0,F_width,F_height-22);
+		setLayout(null);
 		
 		btnBlood = new JButton();
 		btnBlood.setIcon(new ImageIcon(path+"sang.png"));
@@ -68,5 +73,6 @@ public class HomePanel extends JPanel {
 		btnSettings.setBorder(null);
 		btnSettings.setBackground(null);
 		this.add(btnSettings);
+
 	}
 }

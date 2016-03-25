@@ -4,21 +4,22 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
 
+import view.FrameMM;
 import view.HomePanel;
-import view.SecondPanel;
 
 public class DoorAction extends AbstractAction {
-
-	public SecondPanel Fs;
+	
+	public FrameMM frame;
 	public HomePanel Fp;
 	
-	public DoorAction (SecondPanel fenetre){
-		Fs=fenetre;
+	public DoorAction (FrameMM frame){
+		this.frame=frame;
 	}
 	
 	public void actionPerformed (ActionEvent e){
-		Fp.setVisible(false);
-		Fs.setVisible(true);
+		
+		
+		
 	}
 	
 }
