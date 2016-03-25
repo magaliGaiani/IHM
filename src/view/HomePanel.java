@@ -24,7 +24,11 @@ public class HomePanel extends JPanel {
 	private static final int l3 = 175;
 	private static final String path="./src/img/";
 
+<<<<<<< HEAD
 	public HomePanel (int size) {
+=======
+	public HomePanel(int size) {
+>>>>>>> origin/master
 		super();
 		
 		btnBlood = new JButton();
@@ -70,4 +74,9 @@ public class HomePanel extends JPanel {
 		this.add(btnSettings);
 	}
 	
+<<<<<<< HEAD
+=======
+
+	
+>>>>>>> origin/master
 }

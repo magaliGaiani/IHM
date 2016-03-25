@@ -5,7 +5,10 @@ import java.awt.EventQueue;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+<<<<<<< HEAD
 import javax.swing.JLabel;
+=======
+>>>>>>> origin/master
 
 public class FrameMM extends JFrame {
 	//Fenetre crée une fenetre de taille constante et avec un contentPane avec une image de fond (ImagePanel)
@@ -18,6 +21,7 @@ public class FrameMM extends JFrame {
 	private static final int l_sos = 240;
 	private static final String path ="./src/img/";
 	private JButton btnSos;
+<<<<<<< HEAD
 	private JLabel back;
 	private static final String paththeme ="./src/img/theme/";
 	
@@ -32,20 +36,55 @@ public class FrameMM extends JFrame {
 	SportPanel sport = new SportPanel(size_button);
 	ThemePanel theme = new ThemePanel();
 	
+=======
+	public ImagePanel contentPane; //essayer de le mettre en private ??
+	
+	HomePanel home = new HomePanel(size_button); 
+	BloodPanel blood= new BloodPanel(size_button);
+	CallPanel call= new CallPanel();
+	FoodPanel food= new FoodPanel(size_button);
+	HistoryPanel history= new HistoryPanel();
+	PhonePanel phone= new PhonePanel();
+	SettingsPanel settings= new SettingsPanel();
+	SickPanel sick= new SickPanel();
+	SportPanel sport= new SportPanel(size_button);
+	ThemePanel theme= new ThemePanel();
+	
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FrameMM FrameMM = new FrameMM();
+					FrameMM.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+>>>>>>> origin/master
 
 	public FrameMM() {
 		setSize(F_width,F_height);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, F_width, F_height);
+<<<<<<< HEAD
 		getContentPane().setLayout(null);
 		setLayout(null);
+=======
+		contentPane = new ImagePanel("minion.png"); //plus tard : mettre FenetreTheme.getTheme()
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+>>>>>>> origin/master
 		
 		btnSos = new JButton();
 		btnSos.setIcon(new ImageIcon(path+"ambulance.png"));
 		btnSos.setBounds(l_sos, h_sos, size_sos, size_sos);
 		btnSos.setBorder(null);
 		btnSos.setBackground(null);
+<<<<<<< HEAD
 		getContentPane().add(btnSos);
 		
 		back = new JLabel();
@@ -55,6 +94,12 @@ public class FrameMM extends JFrame {
 		
 		this.add(home);
 		//this.add(blood);
+=======
+		contentPane.add(btnSos);
+		
+		this.add(home);
+		this.add(blood);
+>>>>>>> origin/master
 		//this.add(call);
 		//this.add(food);
 		//this.add(history);
@@ -64,8 +109,19 @@ public class FrameMM extends JFrame {
 		//this.add(sport);
 		//this.add(theme);
 		
+<<<<<<< HEAD
 		home.setVisible(true);
 		//blood.setVisible(false);
+=======
+		visiblePanel();
+	} 
+	
+	public void visiblePanel() {
+		
+		//contentPane.setVisible(false);
+		home.setVisible(false);
+		blood.setVisible(true);
+>>>>>>> origin/master
 		//call.setVisible(false);
 		//food.setVisible(false);
 		//history.setVisible(false);
@@ -74,6 +130,14 @@ public class FrameMM extends JFrame {
 		//sick.setVisible(false);
 		//sport.setVisible(false);
 		//theme.setVisible(false);
+<<<<<<< HEAD
 	} 
+=======
+	}
+
+	public int getSize_button (){
+		return size_button;
+	}
+>>>>>>> origin/master
 
 }

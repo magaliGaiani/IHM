@@ -18,7 +18,11 @@ public class CallPanel extends JPanel {
 	private static final String path = "./src/img/phone/";
 	
 	
+<<<<<<< HEAD
 	public CallPanel (){
+=======
+	public CallPanel() {
+>>>>>>> origin/master
 		super();
 		//getContentPane().setImage(path,"mom2.jpg");
 		//mettre les photos de nous à la place, suivant qui est appelé dans FenetrePhone ou image de ambulance

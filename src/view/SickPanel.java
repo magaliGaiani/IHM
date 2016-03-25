@@ -33,7 +33,11 @@ public class SickPanel extends SecondPanel {
 	private JScrollPane scroll;
 	private JPanel pBtn;
 
+<<<<<<< HEAD
 	public SickPanel (){
+=======
+	public SickPanel() {
+>>>>>>> origin/master
 		super();
 		
 		pBtn = new JPanel();
@@ -141,6 +145,9 @@ public class SickPanel extends SecondPanel {
 		btnOk.setBackground(null);
 		btnOk.setBorder(null);
 		this.add(btnOk);
+<<<<<<< HEAD
 		
+=======
+>>>>>>> origin/master
 	}
 }

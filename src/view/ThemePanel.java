@@ -18,7 +18,11 @@ public class ThemePanel extends SecondPanel {
 	private String path = "./src/img/theme/";
 
 
+<<<<<<< HEAD
 	public ThemePanel (){
+=======
+	public ThemePanel() {
+>>>>>>> origin/master
 		super();
 		
 		btnTheme1 = new JButton();
@@ -48,7 +52,10 @@ public class ThemePanel extends SecondPanel {
 		btnTheme4.setBorder(null);
 		btnTheme4.setBackground(null);
 		this.add(btnTheme4);	
+<<<<<<< HEAD
 		
+=======
+>>>>>>> origin/master
 	}
 
 }

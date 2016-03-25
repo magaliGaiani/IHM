@@ -18,7 +18,11 @@ public class BloodPanel extends SecondPanel {
 	private JLabel lblSeringue;
 	private static final String path = "./src/img/";
 
+<<<<<<< HEAD
 	public BloodPanel (int size){
+=======
+	public BloodPanel(int size) {
+>>>>>>> origin/master
 		super();
 		
 		btnEat = new JButton();

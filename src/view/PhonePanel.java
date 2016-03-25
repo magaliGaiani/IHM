@@ -11,6 +11,7 @@ public class PhonePanel extends SecondPanel {
 	private JButton btnDad;
 	private JButton btnDoctor;
 	private String path = "./src/img/phone/";
+<<<<<<< HEAD
 	private static final int h1 = 120;
 	private static final int h2 = 280;
 	private static final int l1 = 40;
@@ -19,6 +20,16 @@ public class PhonePanel extends SecondPanel {
 
 
 	public PhonePanel (){
+=======
+	private static final int h1=120;
+	private static final int h2=280;
+	private static final int l1=40;
+	private static final int l2=160;
+	private static final int l3=100;
+
+
+	public PhonePanel() {
+>>>>>>> origin/master
 		super();
 		
 		btnMom = new JButton();
