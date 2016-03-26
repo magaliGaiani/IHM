@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 public class BloodPanel extends SecondPanel {
+	private static final long serialVersionUID = 1L;
 
 	private JButton btnEat;
 	private JButton btnSport;

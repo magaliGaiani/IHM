@@ -4,12 +4,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class FrameMM extends JFrame {
-	//Fenetre crée une fenetre de taille constante et avec un contentPane avec une image de fond (ImagePanel)
+	private static final long serialVersionUID = 1L;
 	
 	private static final int F_width = 300;
 	private static final int F_height = 500;
+	private static final int marge = 22;
 	private static final int size_button = 80;
 	private static final int size_sos = 60;
 	private static final int h_sos = 0;
@@ -49,17 +51,6 @@ public class FrameMM extends JFrame {
 		sport = new SportPanel(size_button);
 		theme = new ThemePanel();
 		
-		home.setOpaque(false);
-		blood.setOpaque(false);
-		call.setOpaque(false);
-		food.setOpaque(false);
-		history.setOpaque(false);
-		phone.setOpaque(false);
-		settings.setOpaque(false);
-		sick.setOpaque(false);
-		sport.setOpaque(false);
-		theme.setOpaque(false);
-		
 		this.add(home);
 		this.add(blood);
 		this.add(call);
@@ -80,20 +71,25 @@ public class FrameMM extends JFrame {
 		
 		back = new JLabel();
 		back.setIcon(new ImageIcon(paththeme+"minion.png"));
-		back.setBounds(0,0,F_width,F_height-22);
+		back.setBounds(0,0,F_width,F_height-marge);
 		getContentPane().add(back);
+
+		home.setVisible(home.getPanelVisible());
+		blood.setVisible(blood.getPanelVisible());
+		call.setVisible(call.getPanelVisible());
+		food.setVisible(food.getPanelVisible());
+		history.setVisible(history.getPanelVisible());
+		phone.setVisible(phone.getPanelVisible());
+		settings.setVisible(settings.getPanelVisible());
+		sick.setVisible(sick.getPanelVisible());
+		sport.setVisible(sport.getPanelVisible());
+		theme.setVisible(theme.getPanelVisible());
+
+		//panelVisible(sick);
+	}
 	
-		home.setVisible(false);
-		blood.setVisible(false);
-		call.setVisible(false);
-		food.setVisible(false);
-		history.setVisible(false);
-		phone.setVisible(false);
-		settings.setVisible(false);
-		sick.setVisible(false);
-		sport.setVisible(true);
-		theme.setVisible(false);
-		
-	} 
+	public void panelVisible (JPanel panel){
+		panel.setVisible(true);
+	}
 
 }

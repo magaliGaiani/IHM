@@ -2,13 +2,15 @@ package view;
 
 import java.awt.Font;
 
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JCheckBox;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 public class SettingsPanel extends SecondPanel {
+	private static final long serialVersionUID = 1L;
 	
 	private JLabel lblNom;
 	private JLabel lblPrenom;
@@ -31,8 +33,9 @@ public class SettingsPanel extends SecondPanel {
 	private JTextField txtPhotodocteur;
 	private JTextField txtPhotomere;
 	private JTextField txtPhotopere;
-	private JCheckBox rdbtnF;
-	private JCheckBox rdbtnM;
+	private JRadioButton rdbtnF;
+	private JRadioButton rdbtnM;
+	private ButtonGroup group;
 	private JButton btnOk;
 	private static final int size_ok = 60;
 	private static final int l_ok = 110;
@@ -147,13 +150,17 @@ public class SettingsPanel extends SecondPanel {
 		this.add(txtPhotopere);
 		txtPhotopere.setColumns(10);
 		
-		rdbtnF = new JCheckBox("F");
+		rdbtnF = new JRadioButton("F");
 		rdbtnF.setBounds(145, 164, 45, 23);
 		this.add(rdbtnF);
 		
-		rdbtnM = new JCheckBox("M");
+		rdbtnM = new JRadioButton("M");
 		rdbtnM.setBounds(202, 164, 45, 23);
 		this.add(rdbtnM);
+		
+		group = new ButtonGroup();
+	    group.add(rdbtnF);
+	    group.add(rdbtnM);
 		
 		btnOk = new JButton();
 		btnOk.setIcon(new ImageIcon(path+"ok.png"));

@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 public class HistoryPanel extends SecondPanel {
+	private static final long serialVersionUID = 1L;
 
 	public HistoryPanel (){
 		super();

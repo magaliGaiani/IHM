@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class ThemePanel extends SecondPanel {
+	private static final long serialVersionUID = 1L;
 	
 	private JButton btnTheme1;
 	private JButton btnTheme2;

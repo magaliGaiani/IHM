@@ -5,6 +5,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class HomePanel extends JPanel {
+	private static final long serialVersionUID = 1L;
 	
 	private JButton btnBlood;
 	private JButton btnPhone;
@@ -25,12 +26,14 @@ public class HomePanel extends JPanel {
 	private static final String path="./src/img/";
 	private static final int F_width = 300;
 	private static final int F_height = 500;
+	private boolean panelVisible = true;
 
 	public HomePanel (int size) {
 		super();
 		setSize(F_width,F_height);
 		setBounds(0,0,F_width,F_height-22);
 		setLayout(null);
+		setOpaque(false);
 		
 		btnBlood = new JButton();
 		btnBlood.setIcon(new ImageIcon(path+"sang.png"));
@@ -73,6 +76,13 @@ public class HomePanel extends JPanel {
 		btnSettings.setBorder(null);
 		btnSettings.setBackground(null);
 		this.add(btnSettings);
-
 	}
+	
+	public void setPanelVisible(boolean b){
+		panelVisible=b;
+	}
+	public boolean getPanelVisible(){
+		return panelVisible;
+	}
+	
 }

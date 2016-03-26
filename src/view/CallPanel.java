@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 public class CallPanel extends JPanel {
+	private static final long serialVersionUID = 1L;
 
 	private JLabel labPoints;
 	private JButton btnRedphone;
@@ -18,13 +19,16 @@ public class CallPanel extends JPanel {
 	private static final String path = "./src/img/phone/";
 	private static final int F_width = 300;
 	private static final int F_height = 500;
+	private static final int marge = 22;
+	private JLabel back;
+	private boolean panelVisible = false;
 	
 	public CallPanel (){
 		super();
 		setSize(F_width,F_height);
 		setBounds(0,0,F_width,F_height-22);
 		setLayout(null);
-		//getContentPane().setImage(path,"mom2.jpg");
+		setOpaque(false);
 		//mettre les photos de nous à la place, suivant qui est appelé dans FenetrePhone ou image de ambulance
 		
 		labPoints = new JLabel("...");
@@ -40,6 +44,17 @@ public class CallPanel extends JPanel {
 		btnRedphone.setBorder(null);
 		btnRedphone.setBackground(null);
 	
+		back = new JLabel();
+		back.setIcon(new ImageIcon(path+"mom2.jpg"));
+		back.setBounds(0,0,F_width,F_height-marge);
+		this.add(back);
+	}
+	
+	public void setPanelVisible(boolean b){
+		panelVisible=b;
+	}
+	public boolean getPanelVisible(){
+		return panelVisible;
 	}
 
 }

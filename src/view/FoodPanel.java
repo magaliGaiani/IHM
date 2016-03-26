@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class FoodPanel extends SecondPanel {
+	private static final long serialVersionUID = 1L;
 	
 	private JLabel labFeculents;
 	private JLabel labCake;

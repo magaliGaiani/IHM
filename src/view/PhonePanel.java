@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class PhonePanel extends SecondPanel {
+	private static final long serialVersionUID = 1L;
 	//changer les images par nos photos
 	
 	private static final int size_button = 100;
