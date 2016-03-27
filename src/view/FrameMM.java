@@ -4,6 +4,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import model.DoorAction;
 
@@ -74,8 +75,7 @@ public class FrameMM extends JFrame {
 		back.setBounds(0,0,F_width,F_height-marge);
 		getContentPane().add(back);
 		
-		SecondPanel.setBtnDoorAction(new DoorAction(this));
-
+		/*
 		home.setVisible(home.getPanelVisible());
 		blood.setVisible(blood.getPanelVisible());
 		call.setVisible(call.getPanelVisible());
@@ -85,9 +85,47 @@ public class FrameMM extends JFrame {
 		settings.setVisible(settings.getPanelVisible());
 		sick.setVisible(sick.getPanelVisible());
 		sport.setVisible(sport.getPanelVisible());
-		//theme.setVisible(theme.getPanelVisible());
-		theme.setPanelVisible(true);
+		theme.setVisible(theme.getPanelVisible());
+		*/
 		
+		SecondPanel.addBtnDoorAction(new DoorAction(this));
+		
+		home.setVisible(false);
+		blood.setVisible(false);
+		call.setVisible(false);
+		food.setVisible(false);
+		history.setVisible(false);
+		phone.setVisible(false);
+		settings.setVisible(false);
+		sick.setVisible(false);
+		sport.setVisible(false);
+		theme.setVisible(true);
+	
+	}
+	
+	public JPanel getVisiblePanel(){
+		JPanel panel = new JPanel();
+		if (home.isVisible())
+			panel=home;
+		if (blood.isVisible())
+			panel=blood;
+		if (call.isVisible())
+			panel=call;
+		if (food.isVisible())
+			panel=food;
+		if (history.isVisible())
+			panel=history;
+		if (phone.isVisible())
+			panel=phone;
+		if (settings.isVisible())
+			panel=settings;
+		if (sick.isVisible())
+			panel=sick;
+		if (sport.isVisible())
+			panel=sport;
+		if (theme.isVisible())
+			panel=theme;
+		return panel;
 	}
 	
 	public HomePanel getHomePanel(){

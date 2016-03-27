@@ -1,9 +1,10 @@
 package view;
 
-import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import model.DoorAction;
 
 public class SecondPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -38,8 +39,8 @@ public class SecondPanel extends JPanel {
 	public boolean getPanelVisible(){
 		return panelVisible;
 	}
-	public static void setBtnDoorAction(AbstractAction a){
-		btnDoor.setAction(a);
+	public static void addBtnDoorAction(DoorAction a){
+		btnDoor.addActionListener(a);
 	}
 
 }
