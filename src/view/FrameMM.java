@@ -4,7 +4,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+
+import model.DoorAction;
 
 public class FrameMM extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -21,16 +22,16 @@ public class FrameMM extends JFrame {
 	private JLabel back;
 	private static final String paththeme ="./src/img/theme/";
 	
-	private HomePanel home;
-	private BloodPanel blood;
-	private CallPanel call;
-	private FoodPanel food;
-	private HistoryPanel history;
-	private PhonePanel phone;
-	private SettingsPanel settings;
-	private SickPanel sick;
-	private SportPanel sport;
-	private ThemePanel theme;
+	private HomePanel home = null;
+	private BloodPanel blood = null;
+	private CallPanel call = null;
+	private FoodPanel food = null;
+	private HistoryPanel history = null;
+	private PhonePanel phone = null;
+	private SettingsPanel settings = null;
+	private SickPanel sick = null;
+	private SportPanel sport = null;
+	private ThemePanel theme = null;
 	
 	public FrameMM() {
 		setSize(F_width,F_height);
@@ -40,7 +41,6 @@ public class FrameMM extends JFrame {
 		getContentPane().setLayout(null);
 		getContentPane().setLayout(null);
 		
-		home = new HomePanel(size_button);
 		blood = new BloodPanel(size_button);
 		call = new CallPanel();
 		food = new FoodPanel(size_button);
@@ -51,16 +51,16 @@ public class FrameMM extends JFrame {
 		sport = new SportPanel(size_button);
 		theme = new ThemePanel();
 		
-		this.add(home);
-		this.add(blood);
-		this.add(call);
-		this.add(food);
-		this.add(history);
-		this.add(phone);
-		this.add(settings);
-		this.add(sick);
-		this.add(sport);
-		this.add(theme);
+		this.add(getHomePanel());
+		this.add(getBloodPanel());
+		this.add(getCallPanel());
+		this.add(getFoodPanel());
+		this.add(getHistoryPanel());
+		this.add(getPhonePanel());
+		this.add(getSettingsPanel());
+		this.add(getSickPanel());
+		this.add(getSportPanel());
+		this.add(getThemePanel());
 		
 		btnSos = new JButton();
 		btnSos.setIcon(new ImageIcon(path+"ambulance.png"));
@@ -73,6 +73,8 @@ public class FrameMM extends JFrame {
 		back.setIcon(new ImageIcon(paththeme+"minion.png"));
 		back.setBounds(0,0,F_width,F_height-marge);
 		getContentPane().add(back);
+		
+		SecondPanel.setBtnDoorAction(new DoorAction(this));
 
 		home.setVisible(home.getPanelVisible());
 		blood.setVisible(blood.getPanelVisible());
@@ -83,13 +85,61 @@ public class FrameMM extends JFrame {
 		settings.setVisible(settings.getPanelVisible());
 		sick.setVisible(sick.getPanelVisible());
 		sport.setVisible(sport.getPanelVisible());
-		theme.setVisible(theme.getPanelVisible());
-
-		//panelVisible(sick);
+		//theme.setVisible(theme.getPanelVisible());
+		theme.setPanelVisible(true);
+		
 	}
 	
-	public void panelVisible (JPanel panel){
-		panel.setVisible(true);
+	public HomePanel getHomePanel(){
+		if (this.home == null)
+			home = new HomePanel(size_button);
+		return home;
 	}
+	public BloodPanel getBloodPanel(){
+		if (this.blood == null)
+			blood = new BloodPanel(size_button);
+		return blood;
+	}
+	public CallPanel getCallPanel(){
+		if (this.call == null)
+			call = new CallPanel();
+		return call;
+	}
+	public FoodPanel getFoodPanel(){
+		if (this.food == null)
+			food = new FoodPanel(size_button);
+		return food;
+	}
+	public HistoryPanel getHistoryPanel(){
+		if (this.history == null)
+			history = new HistoryPanel();
+		return history;
+	}
+	public PhonePanel getPhonePanel(){
+		if (this.phone == null)
+			phone = new PhonePanel();
+		return phone;
+	}
+	public SettingsPanel getSettingsPanel(){
+		if (this.settings == null)
+			settings = new SettingsPanel();
+		return settings;
+	}
+	public SickPanel getSickPanel(){
+		if (this.sick == null)
+			sick = new SickPanel();
+		return sick;
+	}
+	public SportPanel getSportPanel(){
+		if (this.sport == null)
+			sport = new SportPanel(size_button);
+		return sport;
+	}
+	public ThemePanel getThemePanel(){
+		if (this.theme == null)
+			theme = new ThemePanel();
+		return theme;
+	}
+
 
 }

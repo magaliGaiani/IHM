@@ -21,7 +21,7 @@ public class CallPanel extends JPanel {
 	private static final int F_height = 500;
 	private static final int marge = 22;
 	private JLabel back;
-	private boolean panelVisible = false;
+	private static boolean panelVisible = false;
 	
 	public CallPanel (){
 		super();

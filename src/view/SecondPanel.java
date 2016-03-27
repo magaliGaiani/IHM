@@ -1,5 +1,6 @@
 package view;
 
+import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -11,10 +12,10 @@ public class SecondPanel extends JPanel {
 	private static final int s_door = 60;
 	private static final int h_door = 418;
 	private static final int l_door = 240;
-	private JButton btnDoor;
+	private static JButton btnDoor;
 	private static final int F_width = 300;
 	private static final int F_height = 500;
-	private boolean panelVisible = false;
+	private static boolean panelVisible = false;
 
 	public SecondPanel (){
 		super();
@@ -36,6 +37,9 @@ public class SecondPanel extends JPanel {
 	}
 	public boolean getPanelVisible(){
 		return panelVisible;
+	}
+	public static void setBtnDoorAction(AbstractAction a){
+		btnDoor.setAction(a);
 	}
 
 }

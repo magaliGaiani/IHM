@@ -26,7 +26,7 @@ public class HomePanel extends JPanel {
 	private static final String path="./src/img/";
 	private static final int F_width = 300;
 	private static final int F_height = 500;
-	private boolean panelVisible = true;
+	private static boolean panelVisible = false;
 
 	public HomePanel (int size) {
 		super();
