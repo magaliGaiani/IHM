@@ -36,6 +36,7 @@ public class FrameMM extends JFrame {
 	private ThemePanel theme = null;
 	
 	public FrameMM() {
+		//Paramètres de la fenetre
 		setSize(F_width,F_height);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,16 +44,7 @@ public class FrameMM extends JFrame {
 		getContentPane().setLayout(null);
 		getContentPane().setLayout(null);
 		
-		blood = new BloodPanel(size_button);
-		call = new CallPanel();
-		food = new FoodPanel(size_button);
-		history = new HistoryPanel();
-		phone = new PhonePanel();
-		settings = new SettingsPanel();
-		sick = new SickPanel();
-		sport = new SportPanel(size_button);
-		theme = new ThemePanel();
-		
+		//On crée et on ajoute tous les panels à la fenetre
 		this.add(getHomePanel());
 		this.add(getBloodPanel());
 		this.add(getCallPanel());
@@ -64,6 +56,7 @@ public class FrameMM extends JFrame {
 		this.add(getSportPanel());
 		this.add(getThemePanel());
 		
+		//Bouton SOS (ambulance)
 		btnSos = new JButton();
 		btnSos.setIcon(new ImageIcon(path+"ambulance.png"));
 		btnSos.setBounds(l_sos, h_sos, size_sos, size_sos);
@@ -71,12 +64,33 @@ public class FrameMM extends JFrame {
 		btnSos.setBackground(null);
 		getContentPane().add(btnSos);
 		
+		//Fond d'écran
 		back = new JLabel();
 		back.setIcon(new ImageIcon(paththeme+"minion.png"));
 		back.setBounds(0,0,F_width,F_height-marge);
 		getContentPane().add(back);
 		
-		/*
+		//Actions sur les différents boutons des panels
+		SecondPanel.addBtnDoorAction(new DoorAction(this));
+		HomePanel.addBtnBloodAction(new ButtonAction(this,blood));
+		HomePanel.addBtnPhoneAction(new ButtonAction(this,phone));
+		HomePanel.addBtnBookAction(new ButtonAction(this,history));
+		HomePanel.addBtnSickAction(new ButtonAction(this,sick));
+		HomePanel.addBtnThemeAction(new ButtonAction(this,theme));
+		HomePanel.addBtnSettingsAction(new ButtonAction(this,settings));
+		
+		//On initialise tous les jpanel en non visible sauf un (le home panel plus tard)
+		home.setVisible(false);
+		blood.setVisible(false);
+		call.setVisible(false);
+		food.setVisible(false);
+		history.setVisible(false);
+		phone.setVisible(false);
+		settings.setVisible(false);
+		sick.setVisible(false);
+		sport.setVisible(false);
+		theme.setVisible(true);
+		/* ou :
 		home.setVisible(home.getPanelVisible());
 		blood.setVisible(blood.getPanelVisible());
 		call.setVisible(call.getPanelVisible());
@@ -88,28 +102,10 @@ public class FrameMM extends JFrame {
 		sport.setVisible(sport.getPanelVisible());
 		theme.setVisible(theme.getPanelVisible());
 		*/
-		
-		SecondPanel.addBtnDoorAction(new DoorAction(this));
-		HomePanel.addBtnBloodAction(new ButtonAction(this,blood));
-		HomePanel.addBtnPhoneAction(new ButtonAction(this,phone));
-		HomePanel.addBtnBookAction(new ButtonAction(this,history));
-		HomePanel.addBtnSickAction(new ButtonAction(this,sick));
-		HomePanel.addBtnThemeAction(new ButtonAction(this,theme));
-		HomePanel.addBtnSettingsAction(new ButtonAction(this,settings));
-		
-		home.setVisible(false);
-		blood.setVisible(false);
-		call.setVisible(false);
-		food.setVisible(false);
-		history.setVisible(false);
-		phone.setVisible(false);
-		settings.setVisible(false);
-		sick.setVisible(false);
-		sport.setVisible(false);
-		theme.setVisible(true);
 	
 	}
 	
+	//Fonction qui retourne le panel qui est visible
 	public JPanel getVisiblePanel(){
 		JPanel panel = new JPanel();
 		if (home.isVisible())
@@ -185,6 +181,5 @@ public class FrameMM extends JFrame {
 			theme = new ThemePanel();
 		return theme;
 	}
-
 
 }
