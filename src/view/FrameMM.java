@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import model.ButtonAction;
 import model.DoorAction;
 
 public class FrameMM extends JFrame {
@@ -89,6 +90,12 @@ public class FrameMM extends JFrame {
 		*/
 		
 		SecondPanel.addBtnDoorAction(new DoorAction(this));
+		HomePanel.addBtnBloodAction(new ButtonAction(this,blood));
+		HomePanel.addBtnPhoneAction(new ButtonAction(this,phone));
+		HomePanel.addBtnBookAction(new ButtonAction(this,history));
+		HomePanel.addBtnSickAction(new ButtonAction(this,sick));
+		HomePanel.addBtnThemeAction(new ButtonAction(this,theme));
+		HomePanel.addBtnSettingsAction(new ButtonAction(this,settings));
 		
 		home.setVisible(false);
 		blood.setVisible(false);

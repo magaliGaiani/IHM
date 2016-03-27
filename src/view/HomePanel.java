@@ -4,15 +4,17 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import model.ButtonAction;
+
 public class HomePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
-	private JButton btnBlood;
-	private JButton btnPhone;
-	private JButton btnBook;
-	private JButton btnSick;
-	private JButton btnTheme;
-	private JButton btnSettings;
+	private static JButton btnBlood;
+	private static JButton btnPhone;
+	private static JButton btnBook;
+	private static JButton btnSick;
+	private static JButton btnTheme;
+	private static JButton btnSettings;
 	private static final int s1_blood = 70;
 	private static final int s2_blood = 60;
 	private static final int h_blood = 418;
@@ -76,6 +78,25 @@ public class HomePanel extends JPanel {
 		btnSettings.setBorder(null);
 		btnSettings.setBackground(null);
 		this.add(btnSettings);
+	}
+	
+	public static void addBtnBloodAction(ButtonAction a){
+		btnBlood.addActionListener(a);
+	}
+	public static void addBtnPhoneAction(ButtonAction a){
+		btnPhone.addActionListener(a);
+	}
+	public static void addBtnBookAction(ButtonAction a){
+		btnBook.addActionListener(a);
+	}
+	public static void addBtnSickAction(ButtonAction a){
+		btnSick.addActionListener(a);
+	}
+	public static void addBtnThemeAction(ButtonAction a){
+		btnTheme.addActionListener(a);
+	}
+	public static void addBtnSettingsAction(ButtonAction a){
+		btnSettings.addActionListener(a);
 	}
 	
 	public void setPanelVisible(boolean b){
