@@ -9,18 +9,20 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import model.ButtonAction;
+
 public class BloodPanel extends SecondPanel {
 	private static final long serialVersionUID = 1L;
 
-	private JButton btnEat;
-	private JButton btnSport;
-	private JLabel labGlycemie;
-	private JLabel labInjection;
-	private JLabel lblSeringue;
+	private static JButton btnEat;
+	private static JButton btnSport;
+	private static JLabel labGlycemie;
+	private static JLabel labInjection;
+	private static JLabel lblSeringue;
 	private static final String path = "./src/img/";
 
-	public BloodPanel(int size) {
-		super();
+	public BloodPanel(FrameMM frame, int size) {
+		super(frame);
 		
 		btnEat = new JButton();
 		btnEat.setIcon(new ImageIcon(path+"plate.png"));
@@ -65,5 +67,16 @@ public class BloodPanel extends SecondPanel {
 		labInjection.setOpaque(true);
 		this.add(labInjection);
 		
+		addBtnEatAction(new ButtonAction(frame,frame.getFoodPanel()));
+		addBtnSportAction(new ButtonAction(frame,frame.getSportPanel()));
+		
 	}
+	
+	public static void addBtnEatAction(ButtonAction a){
+		btnEat.addActionListener(a);
+	}
+	public static void addBtnSportAction(ButtonAction a){
+		btnSport.addActionListener(a);
+	}
+	
 }

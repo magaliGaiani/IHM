@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -9,6 +11,7 @@ import model.DoorAction;
 public class SecondPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
+	private FrameMM frame;
 	private static final String path = "./src/img/";
 	private static final int s_door = 60;
 	private static final int h_door = 418;
@@ -17,9 +20,11 @@ public class SecondPanel extends JPanel {
 	private static final int F_width = 300;
 	private static final int F_height = 500;
 	private static boolean panelVisible = false;
+	private static DoorAction doorA;
 
-	public SecondPanel (){
+	public SecondPanel (FrameMM frame){
 		super();
+		this.frame=frame;
 		setSize(F_width,F_height);
 		setBounds(0,0,F_width,F_height-22);
 		setLayout(null);
@@ -31,6 +36,9 @@ public class SecondPanel extends JPanel {
 		btnDoor.setBorder(null);
 		btnDoor.setBackground(null);
 		this.add(btnDoor);
+		
+		doorA=new DoorAction(frame);
+		addBtnDoorAction(doorA);
 	}
 	
 	public void setPanelVisible(boolean b){
@@ -39,8 +47,14 @@ public class SecondPanel extends JPanel {
 	public boolean getPanelVisible(){
 		return panelVisible;
 	}
-	public static void addBtnDoorAction(DoorAction a){
+	public static void addBtnDoorAction(ActionListener a){
 		btnDoor.addActionListener(a);
+	}
+	public static void removeBtnDoorAction(ActionListener a){
+		btnDoor.removeActionListener(a);
+	}
+	public static DoorAction getBtnDoorAction(){
+		return doorA;
 	}
 
 }

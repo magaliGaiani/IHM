@@ -9,8 +9,8 @@ import javax.swing.SwingConstants;
 public class HistoryPanel extends SecondPanel {
 	private static final long serialVersionUID = 1L;
 
-	public HistoryPanel (){
-		super();
+	public HistoryPanel (FrameMM frame){
+		super(frame);
 		
 		JLabel label = new JLabel("15 - 02 - 2016");
 		label.setForeground(Color.BLACK);

@@ -18,8 +18,8 @@ public class ThemePanel extends SecondPanel {
 	private static final int l2 = 170;
 	private String path = "./src/img/theme/";
 
-	public ThemePanel (){
-		super();
+	public ThemePanel (FrameMM frame){
+		super(frame);
 		
 		btnTheme1 = new JButton();
 		btnTheme1.setIcon(new ImageIcon(path+"reine_petit.jpg"));

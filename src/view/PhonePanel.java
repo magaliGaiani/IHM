@@ -3,14 +3,16 @@ package view;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import model.ButtonAction;
+
 public class PhonePanel extends SecondPanel {
 	private static final long serialVersionUID = 1L;
 	//changer les images par nos photos
 	
 	private static final int size_button = 100;
-	private JButton btnMom;
-	private JButton btnDad;
-	private JButton btnDoctor;
+	private static JButton btnMom;
+	private static JButton btnDad;
+	private static JButton btnDoctor;
 	private String path = "./src/img/phone/";
 	private static final int h1 = 120;
 	private static final int h2 = 280;
@@ -18,8 +20,8 @@ public class PhonePanel extends SecondPanel {
 	private static final int l2 = 160;
 	private static final int l3 = 100;
 
-	public PhonePanel() {
-		super();
+	public PhonePanel(FrameMM frame) {
+		super(frame);
 		
 		btnMom = new JButton();
 		btnMom.setIcon(new ImageIcon(path+"mom.jpg"));
@@ -42,6 +44,20 @@ public class PhonePanel extends SecondPanel {
 		btnDoctor.setBackground(null);
 		this.add(btnDoctor);
 		
+		addBtnMomAction(new ButtonAction(frame,frame.getCallPanel()));
+		addBtnDadAction(new ButtonAction(frame,frame.getCallPanel()));
+		addBtnDoctorAction(new ButtonAction(frame,frame.getCallPanel()));
+		
+	}
+	
+	public static void addBtnMomAction(ButtonAction a){
+		btnMom.addActionListener(a);
+	}
+	public static void addBtnDadAction(ButtonAction a){
+		btnDad.addActionListener(a);
+	}
+	public static void addBtnDoctorAction(ButtonAction a){
+		btnDoctor.addActionListener(a);
 	}
 
 }

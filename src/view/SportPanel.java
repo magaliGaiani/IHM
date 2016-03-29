@@ -23,8 +23,8 @@ public class SportPanel extends SecondPanel {
 	private static final int h3=240;
 	private static final int h4=330;
 	
-	public SportPanel (int size){
-		super();
+	public SportPanel (FrameMM frame, int size){
+		super(frame);
 		
 		labRun = new JLabel();
 		labRun.setBounds(l_sport, h1, size, size);

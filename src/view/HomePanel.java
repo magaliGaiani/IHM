@@ -9,6 +9,7 @@ import model.ButtonAction;
 public class HomePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
+	private FrameMM frame;
 	private static JButton btnBlood;
 	private static JButton btnPhone;
 	private static JButton btnBook;
@@ -30,8 +31,9 @@ public class HomePanel extends JPanel {
 	private static final int F_height = 500;
 	private static boolean panelVisible = false;
 
-	public HomePanel (int size) {
+	public HomePanel (FrameMM frame, int size) {
 		super();
+		this.frame=frame;
 		setSize(F_width,F_height);
 		setBounds(0,0,F_width,F_height-22);
 		setLayout(null);
@@ -78,6 +80,13 @@ public class HomePanel extends JPanel {
 		btnSettings.setBorder(null);
 		btnSettings.setBackground(null);
 		this.add(btnSettings);
+		
+		addBtnBloodAction(new ButtonAction(frame,frame.getBloodPanel()));
+		addBtnPhoneAction(new ButtonAction(frame,frame.getPhonePanel()));
+		addBtnBookAction(new ButtonAction(frame,frame.getHistoryPanel()));
+		addBtnSickAction(new ButtonAction(frame,frame.getSickPanel()));
+		addBtnThemeAction(new ButtonAction(frame,frame.getThemePanel()));
+		addBtnSettingsAction(new ButtonAction(frame,frame.getSettingsPanel()));
 	}
 	
 	public static void addBtnBloodAction(ButtonAction a){

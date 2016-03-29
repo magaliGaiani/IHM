@@ -8,11 +8,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import model.DoorAction;
+
 public class CallPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 
-	private JLabel labPoints;
-	private JButton btnRedphone;
+	private FrameMM frame;
+	private static JLabel labPoints;
+	private static JButton btnRedphone;
 	private static final int size_phone = 70;
 	private static final int h_phone = 150;
 	private static final int l_phone = 370;
@@ -23,8 +26,9 @@ public class CallPanel extends JPanel {
 	private JLabel back;
 	private static boolean panelVisible = false;
 	
-	public CallPanel (){
+	public CallPanel (FrameMM frame){
 		super();
+		this.frame=frame;
 		setSize(F_width,F_height);
 		setBounds(0,0,F_width,F_height-22);
 		setLayout(null);
@@ -48,6 +52,12 @@ public class CallPanel extends JPanel {
 		back.setIcon(new ImageIcon(path+"mom2.jpg"));
 		back.setBounds(0,0,F_width,F_height-marge);
 		this.add(back);
+		
+		addBtnRedphoneAction(new DoorAction(frame));
+	}
+	
+	public static void addBtnRedphoneAction(DoorAction a){
+		btnRedphone.addActionListener(a);
 	}
 	
 	public void setPanelVisible(boolean b){

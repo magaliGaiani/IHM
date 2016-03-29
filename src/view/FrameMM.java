@@ -70,17 +70,8 @@ public class FrameMM extends JFrame {
 		back.setBounds(0,0,F_width,F_height-marge);
 		getContentPane().add(back);
 		
-		//Actions sur les différents boutons des panels
-		SecondPanel.addBtnDoorAction(new DoorAction(this));
-		HomePanel.addBtnBloodAction(new ButtonAction(this,blood));
-		HomePanel.addBtnPhoneAction(new ButtonAction(this,phone));
-		HomePanel.addBtnBookAction(new ButtonAction(this,history));
-		HomePanel.addBtnSickAction(new ButtonAction(this,sick));
-		HomePanel.addBtnThemeAction(new ButtonAction(this,theme));
-		HomePanel.addBtnSettingsAction(new ButtonAction(this,settings));
-		
-		//On initialise tous les jpanel en non visible sauf un (le home panel plus tard)
-		home.setVisible(false);
+		//On initialise tous les jpanel en non visible sauf un (le home panel)
+		home.setVisible(true);
 		blood.setVisible(false);
 		call.setVisible(false);
 		food.setVisible(false);
@@ -89,7 +80,7 @@ public class FrameMM extends JFrame {
 		settings.setVisible(false);
 		sick.setVisible(false);
 		sport.setVisible(false);
-		theme.setVisible(true);
+		theme.setVisible(false);
 		/* ou :
 		home.setVisible(home.getPanelVisible());
 		blood.setVisible(blood.getPanelVisible());
@@ -102,7 +93,7 @@ public class FrameMM extends JFrame {
 		sport.setVisible(sport.getPanelVisible());
 		theme.setVisible(theme.getPanelVisible());
 		*/
-	
+		
 	}
 	
 	//Fonction qui retourne le panel qui est visible
@@ -133,52 +124,52 @@ public class FrameMM extends JFrame {
 	
 	public HomePanel getHomePanel(){
 		if (this.home == null)
-			home = new HomePanel(size_button);
+			home = new HomePanel(this,size_button);
 		return home;
 	}
 	public BloodPanel getBloodPanel(){
 		if (this.blood == null)
-			blood = new BloodPanel(size_button);
+			blood = new BloodPanel(this,size_button);
 		return blood;
 	}
 	public CallPanel getCallPanel(){
 		if (this.call == null)
-			call = new CallPanel();
+			call = new CallPanel(this);
 		return call;
 	}
 	public FoodPanel getFoodPanel(){
 		if (this.food == null)
-			food = new FoodPanel(size_button);
+			food = new FoodPanel(this,size_button);
 		return food;
 	}
 	public HistoryPanel getHistoryPanel(){
 		if (this.history == null)
-			history = new HistoryPanel();
+			history = new HistoryPanel(this);
 		return history;
 	}
 	public PhonePanel getPhonePanel(){
 		if (this.phone == null)
-			phone = new PhonePanel();
+			phone = new PhonePanel(this);
 		return phone;
 	}
 	public SettingsPanel getSettingsPanel(){
 		if (this.settings == null)
-			settings = new SettingsPanel();
+			settings = new SettingsPanel(this);
 		return settings;
 	}
 	public SickPanel getSickPanel(){
 		if (this.sick == null)
-			sick = new SickPanel();
+			sick = new SickPanel(this);
 		return sick;
 	}
 	public SportPanel getSportPanel(){
 		if (this.sport == null)
-			sport = new SportPanel(size_button);
+			sport = new SportPanel(this,size_button);
 		return sport;
 	}
 	public ThemePanel getThemePanel(){
 		if (this.theme == null)
-			theme = new ThemePanel();
+			theme = new ThemePanel(this);
 		return theme;
 	}
 

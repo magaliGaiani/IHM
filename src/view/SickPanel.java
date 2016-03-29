@@ -33,8 +33,8 @@ public class SickPanel extends SecondPanel {
 	private JScrollPane scroll;
 	private JPanel pBtn;
 
-	public SickPanel (){
-		super();
+	public SickPanel (FrameMM frame){
+		super(frame);
 		
 		pBtn = new JPanel();
 		scroll = new JScrollPane(pBtn);

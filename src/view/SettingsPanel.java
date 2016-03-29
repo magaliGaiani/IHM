@@ -42,8 +42,8 @@ public class SettingsPanel extends SecondPanel {
 	private static final int h_ok = 400;
 	private static final String path = "./src/img/";
 
-	public SettingsPanel (){
-		super();
+	public SettingsPanel (FrameMM frame){
+		super(frame);
 		
 		lblNom = new JLabel("Nom");
 		lblNom.setFont(new Font("Lucida Grande", Font.BOLD, 13));

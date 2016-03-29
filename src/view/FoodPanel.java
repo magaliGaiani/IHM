@@ -3,6 +3,9 @@ package view;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import model.ButtonAction;
+import model.DoorAction;
+
 public class FoodPanel extends SecondPanel {
 	private static final long serialVersionUID = 1L;
 	
@@ -19,8 +22,8 @@ public class FoodPanel extends SecondPanel {
 	private static final int l1 = 50;
 	private static final int l2 = 170;
 
-	public FoodPanel(int size) {
-		super();
+	public FoodPanel(FrameMM frame,int size) {
+		super(frame);
 		
 		//mettre des images barrées et gris si glycémie trop haute : no_pasta
 		labFeculents = new JLabel();
@@ -52,6 +55,9 @@ public class FoodPanel extends SecondPanel {
 		labFruits.setBounds(l2, h3, size, size);
 		labFruits.setIcon(new ImageIcon(path+"fruit.png"));
 		this.add(labFruits);
+		
+		//removeBtnDoorAction(getBtnDoorAction());
+		//addBtnDoorAction(new ButtonAction(frame,frame.getBloodPanel()));
 		
 	}
 
