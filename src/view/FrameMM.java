@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -7,7 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import model.ButtonAction;
-import model.DoorAction;
 
 public class FrameMM extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -20,8 +21,8 @@ public class FrameMM extends JFrame {
 	private static final int h_sos = 0;
 	private static final int l_sos = 240;
 	private static final String path ="./src/img/";
-	private JButton btnSos;
-	private JLabel back;
+	private static JButton btnSos;
+	private static JLabel back;
 	private static final String paththeme ="./src/img/theme/";
 	
 	private HomePanel home = null;
@@ -63,6 +64,7 @@ public class FrameMM extends JFrame {
 		btnSos.setBorder(null);
 		btnSos.setBackground(null);
 		getContentPane().add(btnSos);
+		addBtnSosAction(new ButtonAction(this,call));
 		
 		//Fond d'écran
 		back = new JLabel();
@@ -120,6 +122,10 @@ public class FrameMM extends JFrame {
 		if (theme.isVisible())
 			panel=theme;
 		return panel;
+	}
+	
+	public static void addBtnSosAction(ActionListener a){
+		btnSos.addActionListener(a);
 	}
 	
 	public HomePanel getHomePanel(){
