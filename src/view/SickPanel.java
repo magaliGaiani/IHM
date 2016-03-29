@@ -9,7 +9,7 @@ import javax.swing.ScrollPaneConstants;
 public class SickPanel extends SecondPanel {
 	private static final long serialVersionUID = 1L;
 	//scroll bar ne fonctionne pas !
-	
+	//coucou
 	private static final int size_button = 50;
 	private static final int borderv = 20;
 	private static final int borderh = 50;
