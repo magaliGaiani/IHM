@@ -3,13 +3,15 @@ package view;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import model.ChangeThemeAction;
+
 public class ThemePanel extends SecondPanel {
 	private static final long serialVersionUID = 1L;
 	
-	private JButton btnTheme1;
-	private JButton btnTheme2;
-	private JButton btnTheme3;
-	private JButton btnTheme4;
+	private static JButton btnTheme1;
+	private static JButton btnTheme2;
+	private static JButton btnTheme3;
+	private static JButton btnTheme4;
 	private static final int size_button1 = 90;
 	private static final int size_button2 = 150;
 	private static final int h1 = 80;
@@ -47,8 +49,27 @@ public class ThemePanel extends SecondPanel {
 		btnTheme4.setBounds(l2, h2, size_button1, size_button2);
 		btnTheme4.setBorder(null);
 		btnTheme4.setBackground(null);
-		this.add(btnTheme4);	
+		this.add(btnTheme4);
+		
+		//Actions sur le theme pour le changer en cliquant dessus
+		addBtnTheme1Action(new ChangeThemeAction(frame,"reine"));
+		addBtnTheme2Action(new ChangeThemeAction(frame,"cars"));
+		addBtnTheme3Action(new ChangeThemeAction(frame,"minion"));
+		addBtnTheme4Action(new ChangeThemeAction(frame,"starwars"));
 
+	}
+	
+	public static void addBtnTheme1Action(ChangeThemeAction a){
+		btnTheme1.addActionListener(a);
+	}
+	public static void addBtnTheme2Action(ChangeThemeAction a){
+		btnTheme2.addActionListener(a);
+	}
+	public static void addBtnTheme3Action(ChangeThemeAction a){
+		btnTheme3.addActionListener(a);
+	}
+	public static void addBtnTheme4Action(ChangeThemeAction a){
+		btnTheme4.addActionListener(a);
 	}
 
 }

@@ -3,7 +3,7 @@ package view;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-import model.ButtonAction;
+import model.CallAction;
 
 public class PhonePanel extends SecondPanel {
 	private static final long serialVersionUID = 1L;
@@ -44,19 +44,19 @@ public class PhonePanel extends SecondPanel {
 		btnDoctor.setBackground(null);
 		this.add(btnDoctor);
 		
-		addBtnMomAction(new ButtonAction(frame,frame.getCallPanel()));
-		addBtnDadAction(new ButtonAction(frame,frame.getCallPanel()));
-		addBtnDoctorAction(new ButtonAction(frame,frame.getCallPanel()));
+		addBtnMomAction(new CallAction(frame,"mom"));
+		addBtnDadAction(new CallAction(frame,"dad"));
+		addBtnDoctorAction(new CallAction(frame,"doctor"));
 		
 	}
 	
-	public static void addBtnMomAction(ButtonAction a){
+	public static void addBtnMomAction(CallAction a){
 		btnMom.addActionListener(a);
 	}
-	public static void addBtnDadAction(ButtonAction a){
+	public static void addBtnDadAction(CallAction a){
 		btnDad.addActionListener(a);
 	}
-	public static void addBtnDoctorAction(ButtonAction a){
+	public static void addBtnDoctorAction(CallAction a){
 		btnDoctor.addActionListener(a);
 	}
 

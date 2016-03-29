@@ -98,6 +98,11 @@ public class FrameMM extends JFrame {
 		
 	}
 	
+	//Fonction qui modifie le fond d'écran 
+	public void setBack (String img){
+		back.setIcon(new ImageIcon(paththeme+img));
+	}
+	
 	//Fonction qui retourne le panel qui est visible
 	public JPanel getVisiblePanel(){
 		JPanel panel = new JPanel();

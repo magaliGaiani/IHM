@@ -21,6 +21,7 @@ public class ButtonAction implements ActionListener {
 	public void actionPerformed (ActionEvent e){
 		//On rend non visible le panel qui est visible
 		frame.getVisiblePanel().setVisible(false);
+		
 		//On rend visible le panel voulu (suivant le bouton)
 		next.setVisible(true);
 	}

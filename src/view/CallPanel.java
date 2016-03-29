@@ -54,10 +54,15 @@ public class CallPanel extends JPanel {
 		this.add(back);
 		
 		addBtnRedphoneAction(new DoorAction(frame));
+		
 	}
 	
 	public static void addBtnRedphoneAction(DoorAction a){
 		btnRedphone.addActionListener(a);
+	}
+	
+	public void setBack(String img){
+		back.setIcon(new ImageIcon(path+img));
 	}
 	
 	public void setPanelVisible(boolean b){
