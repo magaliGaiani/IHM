@@ -8,12 +8,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import model.DoorAction;
+import model.ButtonAction;
 
 public class CallPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 
-	private FrameMM frame;
 	private static JLabel labPoints;
 	private static JButton btnRedphone;
 	private static final int size_phone = 70;
@@ -24,13 +23,11 @@ public class CallPanel extends JPanel {
 	private static final int F_height = 500;
 	private static final int marge = 22;
 	private JLabel back;
-	private static boolean panelVisible = false;
 	
 	public CallPanel (FrameMM frame){
 		super();
-		this.frame=frame;
 		setSize(F_width,F_height);
-		setBounds(0,0,F_width,F_height-22);
+		setBounds(0,0,F_width,F_height-marge);
 		setLayout(null);
 		setOpaque(false);
 		//mettre les photos de nous à la place, suivant qui est appelé dans FenetrePhone ou image de ambulance
@@ -53,23 +50,16 @@ public class CallPanel extends JPanel {
 		back.setBounds(0,0,F_width,F_height-marge);
 		this.add(back);
 		
-		addBtnRedphoneAction(new DoorAction(frame));
+		addBtnRedphoneAction(new ButtonAction(frame,frame.getPhonePanel()));
 		
 	}
 	
-	public static void addBtnRedphoneAction(DoorAction a){
+	public static void addBtnRedphoneAction(ButtonAction a){
 		btnRedphone.addActionListener(a);
 	}
 	
 	public void setBack(String img){
 		back.setIcon(new ImageIcon(path+img));
-	}
-	
-	public void setPanelVisible(boolean b){
-		panelVisible=b;
-	}
-	public boolean getPanelVisible(){
-		return panelVisible;
 	}
 
 }

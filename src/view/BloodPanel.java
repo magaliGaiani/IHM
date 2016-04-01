@@ -9,7 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-import model.ButtonAction;
+import model.FoodAction;
+import model.SportAction;
 
 public class BloodPanel extends SecondPanel {
 	private static final long serialVersionUID = 1L;
@@ -38,44 +39,60 @@ public class BloodPanel extends SecondPanel {
 		btnSport.setBackground(null);
 		this.add(btnSport);
 		
-		//a mettre visible que si glycémie trop haute ou basse
 		lblSeringue = new JLabel();
 		lblSeringue.setIcon(new ImageIcon(path+"seringue.png"));
-		lblSeringue.setBounds(70, 315, size, size);
+		lblSeringue.setBounds(60, 315, size, size);
 		btnSport.setBorder(null);
 		btnSport.setBackground(null);
 		this.add(lblSeringue);
 		
-		//a simuler : random
-		labGlycemie = new JLabel("1,4 g/L");
+		labGlycemie = new JLabel();
 		labGlycemie.setHorizontalAlignment(SwingConstants.CENTER);
 		labGlycemie.setFont(new Font("Lucida Grande", Font.PLAIN, 30));
-		labGlycemie.setBounds(82, 90, 135, 66);
+		labGlycemie.setBounds(75, 90, 150, 70);
 		labGlycemie.setBorder(BorderFactory.createLineBorder(Color.black));
 		labGlycemie.setBackground(Color.white);
 		labGlycemie.setOpaque(true);
 		this.add(labGlycemie);
 		
-		//a mettre visible que si glycémie trop haute ou basse et calculer le nombre d'unités d'insuline
-		labInjection = new JLabel("2 u");
+		labInjection = new JLabel();
 		labInjection.setForeground(Color.BLACK);
 		labInjection.setHorizontalAlignment(SwingConstants.CENTER);
 		labInjection.setFont(new Font("Lucida Grande", Font.PLAIN, 30));
-		labInjection.setBounds(149, 328, 96, 51);
+		labInjection.setBounds(150, 328, 80, 50);
 		labInjection.setBorder(BorderFactory.createLineBorder(Color.black));
 		labInjection.setBackground(Color.white);
 		labInjection.setOpaque(true);
 		this.add(labInjection);
 		
-		addBtnEatAction(new ButtonAction(frame,frame.getFoodPanel()));
-		addBtnSportAction(new ButtonAction(frame,frame.getSportPanel()));
+		addBtnEatAction(new FoodAction(frame,frame.getFoodPanel()));
+		addBtnSportAction(new SportAction(frame,frame.getSportPanel()));
 		
 	}
 	
-	public static void addBtnEatAction(ButtonAction a){
+	public void setRate(String s){
+		labGlycemie.setText(s);
+	}
+	public int getRate (){
+		String s = labGlycemie.getText();
+		s=s.substring(0,s.indexOf(".")+3);
+		int r = Integer.parseInt(s);
+		return r;
+	}
+	public void setBack(Color c){
+		labGlycemie.setBackground(c);;
+	}
+	public void setInjection (boolean b){
+		labInjection.setVisible(b);
+		lblSeringue.setVisible(b);
+	}
+	public void setDose (String d){
+		labInjection.setText(d);
+	}
+	public static void addBtnEatAction(FoodAction a){
 		btnEat.addActionListener(a);
 	}
-	public static void addBtnSportAction(ButtonAction a){
+	public static void addBtnSportAction(SportAction a){
 		btnSport.addActionListener(a);
 	}
 	

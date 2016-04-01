@@ -30,6 +30,8 @@ public class CallAction implements ActionListener {
 			frame.getCallPanel().setBack("dad2.jpeg");
 		if (img=="doctor")
 			frame.getCallPanel().setBack("doctor2.png");
+		if (img=="sos")
+			frame.getCallPanel().setBack("sos.png");
 	}
 	
 }

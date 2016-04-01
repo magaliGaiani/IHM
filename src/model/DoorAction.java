@@ -17,6 +17,7 @@ public class DoorAction implements ActionListener {
 	public void actionPerformed (ActionEvent e){
 		//On rend non visible le panel qui est visible
 		frame.getVisiblePanel().setVisible(false);
+		
 		//On rend le panel Home visible
 		frame.getHomePanel().setVisible(true);
 	}

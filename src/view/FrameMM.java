@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import model.ButtonAction;
+import model.CallAction;
 
 public class FrameMM extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -64,7 +64,7 @@ public class FrameMM extends JFrame {
 		btnSos.setBorder(null);
 		btnSos.setBackground(null);
 		getContentPane().add(btnSos);
-		addBtnSosAction(new ButtonAction(this,call));
+		addBtnSosAction(new CallAction(this,"sos"));
 		
 		//Fond d'écran
 		back = new JLabel();
@@ -83,18 +83,6 @@ public class FrameMM extends JFrame {
 		sick.setVisible(false);
 		sport.setVisible(false);
 		theme.setVisible(false);
-		/* ou :
-		home.setVisible(home.getPanelVisible());
-		blood.setVisible(blood.getPanelVisible());
-		call.setVisible(call.getPanelVisible());
-		food.setVisible(food.getPanelVisible());
-		history.setVisible(history.getPanelVisible());
-		phone.setVisible(phone.getPanelVisible());
-		settings.setVisible(settings.getPanelVisible());
-		sick.setVisible(sick.getPanelVisible());
-		sport.setVisible(sport.getPanelVisible());
-		theme.setVisible(theme.getPanelVisible());
-		*/
 		
 	}
 	

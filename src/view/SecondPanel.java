@@ -11,7 +11,6 @@ import model.DoorAction;
 public class SecondPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
-	private FrameMM frame;
 	private static final String path = "./src/img/";
 	private static final int s_door = 60;
 	private static final int h_door = 418;
@@ -19,14 +18,13 @@ public class SecondPanel extends JPanel {
 	private static JButton btnDoor;
 	private static final int F_width = 300;
 	private static final int F_height = 500;
-	private static boolean panelVisible = false;
+	private static final int marge = 22;
 	private static DoorAction doorA;
 
 	public SecondPanel (FrameMM frame){
 		super();
-		this.frame=frame;
 		setSize(F_width,F_height);
-		setBounds(0,0,F_width,F_height-22);
+		setBounds(0,0,F_width,F_height-marge);
 		setLayout(null);
 		setOpaque(false);
 
@@ -41,12 +39,6 @@ public class SecondPanel extends JPanel {
 		addBtnDoorAction(doorA);
 	}
 	
-	public void setPanelVisible(boolean b){
-		panelVisible=b;
-	}
-	public boolean getPanelVisible(){
-		return panelVisible;
-	}
 	public static void addBtnDoorAction(ActionListener a){
 		btnDoor.addActionListener(a);
 	}

@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Dimension;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -8,8 +10,7 @@ import javax.swing.ScrollPaneConstants;
 
 public class SickPanel extends SecondPanel {
 	private static final long serialVersionUID = 1L;
-	//scroll bar ne fonctionne pas !
-	//coucou
+	
 	private static final int size_button = 50;
 	private static final int borderv = 20;
 	private static final int borderh = 50;
@@ -38,17 +39,15 @@ public class SickPanel extends SecondPanel {
 		
 		pBtn = new JPanel();
 		scroll = new JScrollPane(pBtn);
-		//scroll.setViewportBorder(null);
+		scroll.setViewportBorder(null);
 		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scroll.setSize(300, 310);
-		scroll.setLocation(0, 80);
+		scroll.setBounds(0, 80, 295, 310);
 		this.add(scroll);
-		scroll.setBackground(null);
-		//pBtn.setBackground(null);
 		pBtn.setLocation(0, 100);
 		pBtn.setLayout(null);
-		//pBtn.setSize(300,600);
+		pBtn.setAutoscrolls(true);
+		pBtn.setPreferredSize(new Dimension(300,400));
 		
 		btnMal1 = new JButton();
 		btnMal1.setIcon(new ImageIcon(path+"sick.png"));

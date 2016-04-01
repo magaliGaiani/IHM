@@ -4,12 +4,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import model.BloodAction;
 import model.ButtonAction;
 
 public class HomePanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
-	private FrameMM frame;
 	private static JButton btnBlood;
 	private static JButton btnPhone;
 	private static JButton btnBook;
@@ -29,11 +29,9 @@ public class HomePanel extends JPanel {
 	private static final String path="./src/img/";
 	private static final int F_width = 300;
 	private static final int F_height = 500;
-	private static boolean panelVisible = false;
 
 	public HomePanel (FrameMM frame, int size) {
 		super();
-		this.frame=frame;
 		setSize(F_width,F_height);
 		setBounds(0,0,F_width,F_height-22);
 		setLayout(null);
@@ -81,7 +79,7 @@ public class HomePanel extends JPanel {
 		btnSettings.setBackground(null);
 		this.add(btnSettings);
 		
-		addBtnBloodAction(new ButtonAction(frame,frame.getBloodPanel()));
+		addBtnBloodAction(new BloodAction(frame,frame.getBloodPanel()));
 		addBtnPhoneAction(new ButtonAction(frame,frame.getPhonePanel()));
 		addBtnBookAction(new ButtonAction(frame,frame.getHistoryPanel()));
 		addBtnSickAction(new ButtonAction(frame,frame.getSickPanel()));
@@ -89,7 +87,7 @@ public class HomePanel extends JPanel {
 		addBtnSettingsAction(new ButtonAction(frame,frame.getSettingsPanel()));
 	}
 	
-	public static void addBtnBloodAction(ButtonAction a){
+	public static void addBtnBloodAction(BloodAction a){
 		btnBlood.addActionListener(a);
 	}
 	public static void addBtnPhoneAction(ButtonAction a){
@@ -106,13 +104,6 @@ public class HomePanel extends JPanel {
 	}
 	public static void addBtnSettingsAction(ButtonAction a){
 		btnSettings.addActionListener(a);
-	}
-	
-	public void setPanelVisible(boolean b){
-		panelVisible=b;
-	}
-	public boolean getPanelVisible(){
-		return panelVisible;
 	}
 	
 }
