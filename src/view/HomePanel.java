@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.event.ActionListener;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -87,7 +89,7 @@ public class HomePanel extends JPanel {
 		addBtnSettingsAction(new ButtonAction(frame,frame.getSettingsPanel()));
 	}
 	
-	public static void addBtnBloodAction(BloodAction a){
+	public static void addBtnBloodAction(ActionListener a){
 		btnBlood.addActionListener(a);
 	}
 	public static void addBtnPhoneAction(ButtonAction a){

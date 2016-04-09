@@ -1,6 +1,7 @@
 package controler;
 
 import java.awt.EventQueue;
+
 import view.FrameMM;
 
 public class MainControler {
@@ -15,7 +16,7 @@ public class MainControler {
 					e.printStackTrace();
 				}
 			}
-		});
+		});	
 	}
 
 }

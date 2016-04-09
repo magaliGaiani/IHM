@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 import view.FrameMM;
+import view.SickPanel;
 
 public class ButtonAction implements ActionListener {
 	
@@ -24,6 +25,23 @@ public class ButtonAction implements ActionListener {
 		
 		//On rend visible le panel voulu (suivant le bouton)
 		next.setVisible(true);
+		
+		//On initialise tous les boutons de SickPanel à "non cliqué"
+		if (next==frame.getSickPanel()){
+			SickPanel.setImg(SickPanel.getBtnMal1(),"sick.png");
+			SickPanel.setImg(SickPanel.getBtnMal2(),"sick.png");
+			SickPanel.setImg(SickPanel.getBtnMal3(),"sick.png");
+			SickPanel.setImg(SickPanel.getBtnMal4(),"sick.png");
+			SickPanel.setImg(SickPanel.getBtnMal5(),"sick.png");
+			SickPanel.setImg(SickPanel.getBtnMal6(),"sick.png");
+			SickPanel.setImg(SickPanel.getBtnMal7(),"sick.png");
+			SickPanel.setImg(SickPanel.getBtnMal8(),"sick.png");
+			SickPanel.setImg(SickPanel.getBtnMal9(),"sick.png");
+			SickPanel.setImg(SickPanel.getBtnMal10(),"sick.png");
+			SickPanel.setImg(SickPanel.getBtnMal11(),"sick.png");
+			SickPanel.setImg(SickPanel.getBtnMal12(),"sick.png");
+		}
+			
 	}
 	
 }

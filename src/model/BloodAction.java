@@ -3,6 +3,8 @@ package model;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 import view.BloodPanel;
@@ -13,6 +15,7 @@ public class BloodAction implements ActionListener {
 	private FrameMM frame;
 	private BloodPanel panel;
 	private static float n;
+	private static SimpleDateFormat date = new SimpleDateFormat ("dd/MM/yyyy hh:mm");
 
 	public BloodAction (FrameMM frame, BloodPanel panel){
 		super();
@@ -56,6 +59,9 @@ public class BloodAction implements ActionListener {
 	
 	public static float getRate (){
 		return n;
+	}
+	public static String getDate (){
+		return date.format(new Date());
 	}
 	
 	

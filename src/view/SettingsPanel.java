@@ -9,34 +9,36 @@ import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import model.ValidateAction;
+
 public class SettingsPanel extends SecondPanel {
 	private static final long serialVersionUID = 1L;
 	
-	private JLabel lblNom;
-	private JLabel lblPrenom;
-	private JLabel lblAge;
-	private JLabel lblSexe;
-	private JLabel lblDocteur;
-	private JLabel lblTelDocteur;
-	private JLabel lblTelMere;
-	private JLabel lblTelPere;
-	private JLabel lblPhotoDoctor;
-	private JLabel lblPhotoMere;
-	private JLabel lblPhotoPere;
-	private JTextField txtNom;
-	private JTextField txtPrenom;
-	private JTextField txtAge;
-	private JTextField txtDocteur;
-	private JTextField txtTeldocteur;
-	private JTextField txtTelmere;
-	private JTextField txtTelpere;
-	private JTextField txtPhotodocteur;
-	private JTextField txtPhotomere;
-	private JTextField txtPhotopere;
-	private JRadioButton rdbtnF;
-	private JRadioButton rdbtnM;
-	private ButtonGroup group;
-	private JButton btnOk;
+	private static JLabel lblNom;
+	private static JLabel lblPrenom;
+	private static JLabel lblAge;
+	private static JLabel lblSexe;
+	private static JLabel lblDocteur;
+	private static JLabel lblTelDocteur;
+	private static JLabel lblTelMere;
+	private static JLabel lblTelPere;
+	private static JLabel lblPhotoDoctor;
+	private static JLabel lblPhotoMere;
+	private static JLabel lblPhotoPere;
+	private static JTextField txtNom;
+	private static JTextField txtPrenom;
+	private static JTextField txtAge;
+	private static JTextField txtDocteur;
+	private static JTextField txtTeldocteur;
+	private static JTextField txtTelmere;
+	private static JTextField txtTelpere;
+	private static JTextField txtPhotodocteur;
+	private static JTextField txtPhotomere;
+	private static JTextField txtPhotopere;
+	private static JRadioButton rdbtnF;
+	private static JRadioButton rdbtnM;
+	private static ButtonGroup group;
+	private static JButton btnOk;
 	private static final int size_ok = 60;
 	private static final int l_ok = 110;
 	private static final int h_ok = 400;
@@ -168,6 +170,49 @@ public class SettingsPanel extends SecondPanel {
 		btnOk.setBackground(null);
 		btnOk.setBorder(null);
 		this.add(btnOk);
-		
+		btnOk.addActionListener(new ValidateAction(getNom().getText(),getPrenom().getText(),getAge().getText(),getSexe(),getDocteur().getText(),getTelDocteur().getText(),getTelMere().getText(),getTelPere().getText()));
 	}
+	
+	public static String getSexe(){
+		if (rdbtnF.isSelected())
+			return "F";
+		else {
+			if (rdbtnM.isSelected())
+				return "M";
+			else
+				return "Inconnu";
+		}
+	}
+	public static JTextField getNom(){
+		return txtNom;
+	}
+	public static JTextField getPrenom(){
+		return txtPrenom;
+	}
+	public static JTextField getAge(){
+		return txtAge;
+	}
+	public static JTextField getDocteur(){
+		return txtDocteur;
+	}
+	public static JTextField getTelDocteur(){
+		return txtTeldocteur;
+	}
+	public static JTextField getTelMere(){
+		return txtTelmere;
+	}
+	public static JTextField getTelPere(){
+		return txtTelpere;
+	}
+	public static JTextField getPhotoDocteur(){
+		return txtPhotodocteur;
+	}
+	public static JTextField getPhotoMere(){
+		return txtPhotomere;
+	}
+	public static JTextField getPhotoPere(){
+		return txtPhotopere;
+	}
+
+
 }

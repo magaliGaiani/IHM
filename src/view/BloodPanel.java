@@ -9,8 +9,10 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import model.BloodAction;
 import model.FoodAction;
 import model.SportAction;
+import model.ValidateAction;
 
 public class BloodPanel extends SecondPanel {
 	private static final long serialVersionUID = 1L;
@@ -68,6 +70,8 @@ public class BloodPanel extends SecondPanel {
 		addBtnEatAction(new FoodAction(frame,frame.getFoodPanel()));
 		addBtnSportAction(new SportAction(frame,frame.getSportPanel()));
 		
+		addBtnDoorAction(new ValidateAction(BloodAction.getRate(),BloodAction.getDate()));
+		 
 	}
 	
 	public void setRate(String s){
