@@ -70,7 +70,7 @@ public class BloodPanel extends SecondPanel {
 		addBtnEatAction(new FoodAction(frame,frame.getFoodPanel()));
 		addBtnSportAction(new SportAction(frame,frame.getSportPanel()));
 		
-		addBtnDoorAction(new ValidateAction(BloodAction.getRate(),BloodAction.getDate()));
+		addBtnDoorAction(new ValidateAction(frame,BloodAction.getRate(),BloodAction.getDate()));
 		 
 	}
 	

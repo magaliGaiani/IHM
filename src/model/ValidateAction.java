@@ -8,13 +8,19 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import javax.swing.JLabel;
+
+import view.FrameMM;
 import view.HistoryPanel;
 import view.SettingsPanel;
 import view.SickPanel;
 
 public class ValidateAction implements ActionListener {
 	
-	private static DataSave i;
+	private FrameMM frame;
+	private static DataSave iperso;
+	private static DataSave irate;
+	private static DataSave isick;
 	private String nom;
 	private String prenom;
 	private String age;
@@ -23,7 +29,7 @@ public class ValidateAction implements ActionListener {
 	private String teldocteur;
 	private String telmere;
 	private String telpere;
-	private float rate;
+	private String rate;
 	private String date;
 	private String mal1;
 	private String mal2;
@@ -38,8 +44,9 @@ public class ValidateAction implements ActionListener {
 	private String mal11;
 	private String mal12;
 	
-	public ValidateAction (String nom, String prenom, String age, String sexe, String docteur, String teldocteur, String telmere, String telpere){
+	public ValidateAction (FrameMM frame, String nom, String prenom, String age, String sexe, String docteur, String teldocteur, String telmere, String telpere){
 		super();
+		this.frame=frame;
 		this.nom = nom;
 		this.prenom=prenom;
 		this.age= age;
@@ -49,13 +56,15 @@ public class ValidateAction implements ActionListener {
 		this.telmere=telmere;
 		this.telpere=telpere;
 	}
-	public ValidateAction (Float rate, String date){
+	public ValidateAction (FrameMM frame, String rate, String date){
 		super();
+		this.frame=frame;
 		this.rate=rate;
 		this.date=date;
 	}
-	public ValidateAction (String mal1,String mal2,String mal3,String mal4,String mal5,String mal6,String mal7,String mal8,String mal9,String mal10,String mal11,String mal12){
+	public ValidateAction (FrameMM frame, String mal1,String mal2,String mal3,String mal4,String mal5,String mal6,String mal7,String mal8,String mal9,String mal10,String mal11,String mal12){
 		super();
+		this.frame=frame;
 		this.mal1=mal1;
 		this.mal2=mal2;
 		this.mal3=mal3;
@@ -99,47 +108,51 @@ public class ValidateAction implements ActionListener {
 			File fichier = new File("./src/data");
 			FileOutputStream fos = new FileOutputStream (fichier);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			oos.writeObject(new DataSave(nom,prenom,age,sexe,docteur,teldocteur,telmere,telpere,rate,date,mal1,mal2,mal3,mal4,mal5,mal6,mal7,mal8,mal9,mal10,mal11,mal12));
+			if (nom!=null)
+				oos.writeObject(new DataSave(nom,prenom,age,sexe,docteur,teldocteur,telmere,telpere));
+			if (rate!=null)
+				oos.writeObject(new DataSave(rate,date));
+			if(mal1!=null)
+				oos.writeObject(new DataSave(mal1,mal2,mal3,mal4,mal5,mal6,mal7,mal8,mal9,mal10,mal11,mal12));
 			oos.close();
 			
 			FileInputStream fis = new FileInputStream (fichier);
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			Object infos = ois.readObject();
-			i = (DataSave) infos;
+			Object infosperso = ois.readObject();
+			Object infosrate = ois.readObject();
+			Object infossick = ois.readObject();
+			iperso = (DataSave) infosperso;
+			irate = (DataSave) infosrate;
+			isick = (DataSave) infossick;
 			ois.close();
 			
-			System.out.println(i.getNom());
-			System.out.println(i.getPrenom());
-			System.out.println(i.getAge());
-			System.out.println(i.getSexe());
-			System.out.println(i.getDocteur());
-			System.out.println(i.getTelDocteur());
-			System.out.println(i.getTelMere());
-			System.out.println(i.getTelPere());
-			System.out.println(i.getRate());
-			System.out.println(i.getDate());
-			System.out.println(i.getMal1());
-			System.out.println(i.getMal2());
-			System.out.println(i.getMal3());
-			System.out.println(i.getMal4());
-			System.out.println(i.getMal5());
-			System.out.println(i.getMal6());
-			System.out.println(i.getMal7());
-			System.out.println(i.getMal8());
-			System.out.println(i.getMal9());
-			System.out.println(i.getMal10());
-			System.out.println(i.getMal11());
-			System.out.println(i.getMal12());
-		
-			HistoryPanel.addRate();
+			System.out.println(iperso.getNom());
+			System.out.println(iperso.getPrenom());
+			System.out.println(iperso.getAge());
+			System.out.println(iperso.getSexe());
+			System.out.println(iperso.getDocteur());
+			System.out.println(iperso.getTelDocteur());
+			System.out.println(iperso.getTelMere());
+			System.out.println(iperso.getTelPere());
+			System.out.println(irate.getRate());
+			System.out.println(irate.getDate());
+			System.out.println(isick.getMal1());
+			System.out.println(isick.getMal2());
+			System.out.println(isick.getMal3());
+			System.out.println(isick.getMal4());
+			System.out.println(isick.getMal5());
+			System.out.println(isick.getMal6());
+			System.out.println(isick.getMal7());
+			System.out.println(isick.getMal8());
+			System.out.println(isick.getMal9());
+			System.out.println(isick.getMal10());
+			System.out.println(isick.getMal11());
+			System.out.println(isick.getMal12());
+			
+			JLabel l =HistoryPanel.addRate(irate.getDate(),irate.getRate());
+			frame.getHistoryPanel().add(l);
 		}
 			catch (Exception ex){}
-		
-		
 	}
 	
-	public static DataSave getInfos (){
-		return i;
-	}
-
 }

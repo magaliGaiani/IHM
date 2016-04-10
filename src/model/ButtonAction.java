@@ -41,6 +41,20 @@ public class ButtonAction implements ActionListener {
 			SickPanel.setImg(SickPanel.getBtnMal11(),"sick.png");
 			SickPanel.setImg(SickPanel.getBtnMal12(),"sick.png");
 		}
+		/*
+		if (next==frame.getHistoryPanel()){
+			try{
+				FileInputStream fis = new FileInputStream ("./src/data");
+				ObjectInputStream ois = new ObjectInputStream(fis);
+				Object infos = ois.readObject();
+				HistoryPanel.setI((DataSave) infos);
+				ois.close();
+				JLabel l =HistoryPanel.addRate();
+				frame.getHistoryPanel().add(l);
+			}
+			catch (Exception a){};
+		}
+		*/
 			
 	}
 	

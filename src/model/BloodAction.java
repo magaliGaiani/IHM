@@ -15,6 +15,7 @@ public class BloodAction implements ActionListener {
 	private FrameMM frame;
 	private BloodPanel panel;
 	private static float n;
+	private static String rate;
 	private static SimpleDateFormat date = new SimpleDateFormat ("dd/MM/yyyy hh:mm");
 
 	public BloodAction (FrameMM frame, BloodPanel panel){
@@ -30,7 +31,7 @@ public class BloodAction implements ActionListener {
 		float min = (float)0.30;
 		n = rand.nextFloat()*(max - min) + min;
 		String s = Float.toString(n);
-		String rate =s.substring(0,s.indexOf(".")+3) + " g/L";
+		rate =s.substring(0,s.indexOf(".")+3) + " g/L";
 		panel.setRate(rate);
 		
 		//Couleur de fond et on rend visible ou non la seringue et la dose en fonction du taux de glycémie
@@ -56,9 +57,11 @@ public class BloodAction implements ActionListener {
 		//On rend visible le panel blood
 		panel.setVisible(true);
 	}
-	
-	public static float getRate (){
+	public static float getFRate(){
 		return n;
+	}
+	public static String getRate(){
+		return rate;
 	}
 	public static String getDate (){
 		return date.format(new Date());

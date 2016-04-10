@@ -155,7 +155,7 @@ public class SickPanel extends SecondPanel {
 		btnOk.setBackground(null);
 		btnOk.setBorder(null);
 		this.add(btnOk);
-		btnOk.addActionListener(new ValidateAction(selected(btnMal1),selected(btnMal2),selected(btnMal3),selected(btnMal4),selected(btnMal5),selected(btnMal6),selected(btnMal7),selected(btnMal8),selected(btnMal9),selected(btnMal10),selected(btnMal11),selected(btnMal12)));
+		btnOk.addActionListener(new ValidateAction(frame,selected(btnMal1),selected(btnMal2),selected(btnMal3),selected(btnMal4),selected(btnMal5),selected(btnMal6),selected(btnMal7),selected(btnMal8),selected(btnMal9),selected(btnMal10),selected(btnMal11),selected(btnMal12)));
 	
 		btnMal1.addActionListener(new SelectMalAction(btnMal1));
 		btnMal2.addActionListener(new SelectMalAction(btnMal2));

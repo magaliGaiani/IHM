@@ -19,7 +19,7 @@ public class FoodAction implements ActionListener {
 	
 	public void actionPerformed (ActionEvent e){
 		//On change les images en fonction du taux de glycémie
-		float n = BloodAction.getRate();
+		float n = BloodAction.getFRate();
 		if (n>0.7 && n<1.4){
 			food.setFeculents(true);
 			food.setMeat(true);

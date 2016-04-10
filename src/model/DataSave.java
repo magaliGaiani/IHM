@@ -14,7 +14,7 @@ public class DataSave implements Serializable {
 	private String teldocteur;
 	private String telmere;
 	private String telpere;
-	private float rate;
+	private String rate;
 	private String date;
 	private String mal1;
 	private String mal2;
@@ -29,17 +29,24 @@ public class DataSave implements Serializable {
 	private String mal11;
 	private String mal12;
 	
-	public DataSave (String n, String p, String a, String s, String d, String td, String tm, String tp, float rate, String date, String mal1,String mal2,String mal3,String mal4,String mal5,String mal6,String mal7,String mal8,String mal9,String mal10,String mal11,String mal12){
-		this.nom=n;
-		this.prenom=p;
-		this.age=a;
-		this.sexe=s;
-		this.docteur=d;
-		this.teldocteur=td;
-		this.telmere=tm;
-		this.telpere=tp;
+	public DataSave (String nom, String prenom, String age, String sexe, String docteur, String teldocteur, String telmere, String telpere){
+		super();
+		this.nom = nom;
+		this.prenom=prenom;
+		this.age= age;
+		this.sexe=sexe;
+		this.docteur=docteur;
+		this.teldocteur=teldocteur;
+		this.telmere=telmere;
+		this.telpere=telpere;
+	}
+	public DataSave (String rate, String date){
+		super();
 		this.rate=rate;
 		this.date=date;
+	}
+	public DataSave (String mal1,String mal2,String mal3,String mal4,String mal5,String mal6,String mal7,String mal8,String mal9,String mal10,String mal11,String mal12){
+		super();
 		this.mal1=mal1;
 		this.mal2=mal2;
 		this.mal3=mal3;
@@ -78,7 +85,7 @@ public class DataSave implements Serializable {
 	public String getTelPere(){
 		return telpere;
 	}
-	public float getRate(){
+	public String getRate(){
 		return rate;
 	}
 	public String getDate(){
@@ -87,7 +94,6 @@ public class DataSave implements Serializable {
 	public String getMal1(){
 		return mal1;
 	}
-	
 	public String getMal2(){
 		return mal2;
 	}

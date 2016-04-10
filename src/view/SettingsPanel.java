@@ -170,7 +170,7 @@ public class SettingsPanel extends SecondPanel {
 		btnOk.setBackground(null);
 		btnOk.setBorder(null);
 		this.add(btnOk);
-		btnOk.addActionListener(new ValidateAction(getNom().getText(),getPrenom().getText(),getAge().getText(),getSexe(),getDocteur().getText(),getTelDocteur().getText(),getTelMere().getText(),getTelPere().getText()));
+		btnOk.addActionListener(new ValidateAction(frame,getNom().getText(),getPrenom().getText(),getAge().getText(),getSexe(),getDocteur().getText(),getTelDocteur().getText(),getTelMere().getText(),getTelPere().getText()));
 	}
 	
 	public static String getSexe(){

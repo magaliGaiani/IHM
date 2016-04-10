@@ -20,7 +20,7 @@ public class SportAction implements ActionListener {
 	public void actionPerformed (ActionEvent e){
 		//On change les temps en fonction du taux de glycémie
 		// 0 : no / 1 : 15min / 2 : 30min / 3 : 45min / 4 : 1h
-		float n = BloodAction.getRate();
+		float n = BloodAction.getFRate();
 		if (n>0.7 && n<1.4){
 			sport.setTime(sport.getRun(),4);
 			sport.setTime(sport.getBike(),4);
