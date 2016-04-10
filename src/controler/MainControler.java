@@ -12,9 +12,14 @@ public class MainControler {
 				try {
 					FrameMM myframe = new FrameMM();
 					myframe.setVisible(true);
+					/*
+					FileInputStream fis = new FileInputStream ("./src/data");
+					ObjectInputStream ois = new ObjectInputStream(fis);
+					ois.close();
+					*/
 				} catch (Exception e) {
 					e.printStackTrace();
-				}
+				}	
 			}
 		});	
 	}

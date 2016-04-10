@@ -28,33 +28,17 @@ public class ButtonAction implements ActionListener {
 		
 		//On initialise tous les boutons de SickPanel à "non cliqué"
 		if (next==frame.getSickPanel()){
-			SickPanel.setImg(SickPanel.getBtnMal1(),"sick.png");
-			SickPanel.setImg(SickPanel.getBtnMal2(),"sick.png");
-			SickPanel.setImg(SickPanel.getBtnMal3(),"sick.png");
-			SickPanel.setImg(SickPanel.getBtnMal4(),"sick.png");
-			SickPanel.setImg(SickPanel.getBtnMal5(),"sick.png");
-			SickPanel.setImg(SickPanel.getBtnMal6(),"sick.png");
-			SickPanel.setImg(SickPanel.getBtnMal7(),"sick.png");
-			SickPanel.setImg(SickPanel.getBtnMal8(),"sick.png");
-			SickPanel.setImg(SickPanel.getBtnMal9(),"sick.png");
-			SickPanel.setImg(SickPanel.getBtnMal10(),"sick.png");
-			SickPanel.setImg(SickPanel.getBtnMal11(),"sick.png");
-			SickPanel.setImg(SickPanel.getBtnMal12(),"sick.png");
+			SickPanel.setImg(SickPanel.getBtnMal1(),"sick1.png");
+			SickPanel.setImg(SickPanel.getBtnMal2(),"sick2.png");
+			SickPanel.setImg(SickPanel.getBtnMal3(),"sick3.png");
+			SickPanel.setImg(SickPanel.getBtnMal4(),"sick4.png");
+			SickPanel.setImg(SickPanel.getBtnMal5(),"sick5.png");
+			SickPanel.setImg(SickPanel.getBtnMal6(),"sick6.png");
+			SickPanel.setImg(SickPanel.getBtnMal7(),"sick7.png");
+			SickPanel.setImg(SickPanel.getBtnMal8(),"sick8.png");
+			SickPanel.setImg(SickPanel.getBtnMal9(),"sick9.png");
+			SickPanel.setImg(SickPanel.getBtnMal10(),"sick10.png");
 		}
-		/*
-		if (next==frame.getHistoryPanel()){
-			try{
-				FileInputStream fis = new FileInputStream ("./src/data");
-				ObjectInputStream ois = new ObjectInputStream(fis);
-				Object infos = ois.readObject();
-				HistoryPanel.setI((DataSave) infos);
-				ois.close();
-				JLabel l =HistoryPanel.addRate();
-				frame.getHistoryPanel().add(l);
-			}
-			catch (Exception a){};
-		}
-		*/
 			
 	}
 	

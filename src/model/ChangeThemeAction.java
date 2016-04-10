@@ -3,8 +3,6 @@ package model;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import view.FrameMM;
 
 public class ChangeThemeAction implements ActionListener {
@@ -26,7 +24,7 @@ public class ChangeThemeAction implements ActionListener {
 			//MediaPlayer mediaPlayer = new MediaPlayer(neige);
 			//mediaPlayer.setCycleCount(5);
 			//mediaPlayer.play();
-			new MediaPlayer(new Media("./src/music/neige.mp3")).play();
+			//new MediaPlayer(new Media("./src/music/neige.mp3")).play();
 		}
 		if (img=="minion")
 			frame.setBack("minion.png");

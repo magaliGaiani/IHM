@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-import model.ValidateAction;
+import model.ValidateProfileAction;
 
 public class SettingsPanel extends SecondPanel {
 	private static final long serialVersionUID = 1L;
@@ -170,7 +170,7 @@ public class SettingsPanel extends SecondPanel {
 		btnOk.setBackground(null);
 		btnOk.setBorder(null);
 		this.add(btnOk);
-		btnOk.addActionListener(new ValidateAction(frame,getNom().getText(),getPrenom().getText(),getAge().getText(),getSexe(),getDocteur().getText(),getTelDocteur().getText(),getTelMere().getText(),getTelPere().getText()));
+		btnOk.addActionListener(new ValidateProfileAction());
 	}
 	
 	public static String getSexe(){
@@ -183,26 +183,47 @@ public class SettingsPanel extends SecondPanel {
 				return "Inconnu";
 		}
 	}
-	public static JTextField getNom(){
-		return txtNom;
+	public static String getNom(){
+		if (txtNom == null)
+			return ("Inconnu");
+		else
+			return txtNom.getText();
 	}
-	public static JTextField getPrenom(){
-		return txtPrenom;
+	public static String getPrenom(){
+		if (txtPrenom == null)
+			return ("Inconnu");
+		else
+			return txtPrenom.getText();
 	}
-	public static JTextField getAge(){
-		return txtAge;
+	public static String getAge(){
+		if (txtAge == null)
+			return ("Inconnu");
+		else
+			return txtAge.getText();
 	}
-	public static JTextField getDocteur(){
-		return txtDocteur;
+	public static String getDocteur(){
+		if (txtDocteur == null)
+			return ("Inconnu");
+		else
+			return txtDocteur.getText();
 	}
-	public static JTextField getTelDocteur(){
-		return txtTeldocteur;
+	public static String getTelDocteur(){
+		if (txtTeldocteur == null)
+			return ("Inconnu");
+		else
+			return txtTeldocteur.getText();
 	}
-	public static JTextField getTelMere(){
-		return txtTelmere;
+	public static String getTelMere(){
+		if (txtTelmere == null)
+			return ("Inconnu");
+		else
+			return txtTelmere.getText();
 	}
-	public static JTextField getTelPere(){
-		return txtTelpere;
+	public static String getTelPere(){
+		if (txtTelpere == null)
+			return ("Inconnu");
+		else
+			return txtTelpere.getText();
 	}
 	public static JTextField getPhotoDocteur(){
 		return txtPhotodocteur;
